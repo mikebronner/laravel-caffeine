@@ -1,0 +1,38 @@
+<?php namespace GeneaLabs\LaravelCaffeine\Http\Middleware;
+
+use Closure;
+use Illuminate\Contracts\Routing\Middleware;
+
+class LaravelCaffeineDripMiddleware implements Middleware
+{
+    /**
+     * Handle an incoming request.
+     *
+     * @param  \Illuminate\Http\Request $request
+     * @param  \Closure                 $next
+     *
+     * @return mixed
+     */
+    public function handle($request, Closure $next)
+    {
+        $content = null;
+        $response = $next($request);
+
+        if (! method_exists($response, 'getOriginalContent')) {
+            return $response;
+        }
+
+        $content = $response->getOriginalContent();
+
+        if (method_exists($content, 'render')) {
+            $content = $content->render();
+        }
+
+        if (is_string($content) && strpos($content, '_token')) {
+            $content = str_replace('</body>', '<script src="' . asset('/genealabs/laravel-caffeine/js/laravel-caffeine.js') . '"></script></body>', $content);
+            $response->setContent($content);
+        }
+
+        return $response;
+    }
+}
