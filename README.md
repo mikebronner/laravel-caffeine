@@ -37,7 +37,7 @@ existing routes.
   ```php
       protected $middleware = [
           // other entries above
-          LaravelCaffeineDripMiddleware::class,
+          \GeneaLabs\LaravelCaffeine\Http\Middleware\LaravelCaffeineDripMiddleware::class,
 	];
   ```
 
