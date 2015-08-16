@@ -42,5 +42,5 @@ existing routes.
   ```
 
 ## Usage
-That was it! All you need to do now is load your pages, and it will apply itself automatically where it finds a form
-with a `_token` field.
+That was it! It will apply itself automatically where it finds a form
+with a `_token` field while pages are open in browsers.
