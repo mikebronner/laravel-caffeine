@@ -14,7 +14,7 @@ I chose this approach to keep the integrity of site-security, by avoiding the fo
 - removing session-timeout on all pages.
 
 ## Considerations
-This package adds the multiple routes under `genealabs/laravel-caffeine`. Please verify that these don't collide with your 
+This package adds the routes under `genealabs/laravel-caffeine`. Please verify that these don't collide with your 
 existing routes.
 
 ## Installation
