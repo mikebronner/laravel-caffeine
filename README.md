@@ -20,7 +20,7 @@ existing routes.
 ## Installation
 1. Install MixPanel via composer:
   ```sh
-  composer require genealabs\laravel-caffeine:~0.1
+  composer require genealabs/laravel-caffeine:~0.1
   ```
 
 2. Add the service provider entry in `config\app.php`:
