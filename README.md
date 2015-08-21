@@ -15,8 +15,13 @@ I chose this approach to keep the integrity of site-security, by avoiding the fo
 - removing session-timeout on all pages.
 
 ## Considerations
+### Routes
 This package adds the routes under `genealabs/laravel-caffeine`. Please verify that these don't collide with your 
 existing routes.
+
+### Dependencies
+- Your project should be running Laravel 5.1.
+- You should have jQuery 1.8+ loaded in all your views.
 
 ## Installation
 1. Install Caffeine via composer:
