@@ -1,5 +1,4 @@
-# Caffeine For Laravel 5.1
-**_Keeping Your Laravel Forms Awake_**
+![Caffeine for Laravel](https://github.com/GeneaLabs/laravel-caffeine/master/caffeine.jpg)
 
 ## Goal
 Prevent forms from timing out when submitting them after leaving them on-screen for a considerable amount of time.
