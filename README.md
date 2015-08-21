@@ -1,4 +1,6 @@
 # Caffeine For Laravel 5.1
+**_Keeping Your Laravel Forms Awake_**
+
 ## Goal
 Prevent forms from timing out when submitting them after leaving them on-screen for a considerable amount of time.
 (Laravel defaults to 120 minutes, but that is configurable and could be different site-by-site.)
@@ -18,7 +20,7 @@ This package adds the routes under `genealabs/laravel-caffeine`. Please verify t
 existing routes.
 
 ## Installation
-1. Install caffeine via composer:
+1. Install Caffeine via composer:
   ```sh
   composer require genealabs/laravel-caffeine:~0.1
   ```
