@@ -1,4 +1,4 @@
-![Caffeine for Laravel](https://github.com/GeneaLabs/laravel-caffeine/master/caffeine.jpg)
+![Coffee for Laravel](https://github.com/GeneaLabs/laravel-caffeine/blob/master/caffeine.jpg)
 
 ## Goal
 Prevent forms from timing out when submitting them after leaving them on-screen for a considerable amount of time.
