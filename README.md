@@ -18,7 +18,7 @@ This package adds the routes under `genealabs/laravel-caffeine`. Please verify t
 existing routes.
 
 ## Installation
-1. Install MixPanel via composer:
+1. Install caffeine via composer:
   ```sh
   composer require genealabs/laravel-caffeine:~0.1
   ```
