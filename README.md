@@ -21,7 +21,6 @@ existing routes.
 
 ### Dependencies
 - Your project should be running Laravel 5.1.
-- You should have jQuery 1.8+ loaded in all your views.
 
 ## Installation
 1. Install Caffeine via composer:
