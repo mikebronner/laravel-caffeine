@@ -29,7 +29,7 @@ class LaravelCaffeineDripMiddleware implements Middleware
         }
 
         if (is_string($content) && strpos($content, '_token')) {
-            $content = str_replace('</body>', '<script src="' . asset('/genealabs/laravel-caffeine/js/laravel-caffeine.js') . '"></script></body>', $content);
+            $content = str_replace('</body>', "<script>setInterval(function(){var e=window.XMLHttpRequest?new XMLHttpRequest:new ActiveXObject('Microsoft.XMLHTTP');e.open('GET','/genealabs/laravel-caffeine/drip',!0),e.send()},5e3);</script></body>", $content);
             $response->setContent($content);
         }
 
