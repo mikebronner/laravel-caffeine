@@ -25,7 +25,7 @@ existing routes.
 ## Installation
 1. Install Caffeine via composer:
   ```sh
-  composer require genealabs/laravel-caffeine:~0.1
+  composer require genealabs/laravel-caffeine:~0.2
   ```
 
 2. Add the service provider entry in `config\app.php`:
