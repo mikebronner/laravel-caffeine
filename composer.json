@@ -1,6 +1,6 @@
 {
   "name": "genealabs/laravel-caffeine",
-  "description": "Package for Laravel 5.1 that keeps session alive, preventing timeout of forms.",
+  "description": "Keeping Your Laravel Forms Awake",
   "license": "MIT",
   "authors": [
     {
