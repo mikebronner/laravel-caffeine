@@ -33,12 +33,7 @@ existing routes.
           GeneaLabs\LaravelCaffeine\LaravelCaffeineServiceProvider::class,
   ```
 
-3. Publish the assets for this package:
-  ```sh
-  php artisan vendor:publish --tag=genealabs-laravel-caffeine --force
-  ```
-
-4. Register the middleware class in `app/Http/kernel.php`:
+3. Register the middleware class in `app/Http/kernel.php`:
   ```php
       protected $middleware = [
           // other entries above
