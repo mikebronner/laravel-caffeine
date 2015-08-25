@@ -1,6 +1,6 @@
 <?php namespace GeneaLabs\LaravelCaffeine\Http\Controllers;
 
-use Illuminate\Routing\Controller
+use Illuminate\Routing\Controller;
 
 class LaravelCaffeineController extends Controller
 {
