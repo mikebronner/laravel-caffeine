@@ -41,6 +41,15 @@ existing routes.
 	];
   ```
 
+## Configuration
+To change the default drip interval of 5 minutes, simply publish the configuration file:
+```sh
+php artisan vendor:publish --tag=genealabs-laravel-caffeine
+```
+
+You can now change the default value in `/app/config/genealabs-laravel-caffeine.php` as desired. Deleting the 
+`/app/config/genealabs-laravel-caffeine.php` file will revert back to the default 5-minute interval.
+
 ## Usage
 That was it! It will apply itself automatically where it finds a form
 with a `_token` field while pages are open in browsers.
