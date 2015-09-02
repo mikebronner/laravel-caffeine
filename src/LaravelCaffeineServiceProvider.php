@@ -11,11 +11,13 @@ class LaravelCaffeineServiceProvider extends ServiceProvider
         if (! $this->app->routesAreCached()) {
             require __DIR__ . '/Http/routes.php';
         }
+
+        $this->publishes([__DIR__ . '/../config/config.php' => config_path('genealabs-laravel-caffeine.php')], 'genealabs-laravel-caffeine');
     }
 
     public function register()
     {
-
+        // Nothing to see here, folks ...
     }
 
     /**
@@ -23,6 +25,6 @@ class LaravelCaffeineServiceProvider extends ServiceProvider
      */
     public function provides()
     {
-        return ['laravel-caffeine'];
+        return ['genealabs-laravel-caffeine'];
     }
 }
