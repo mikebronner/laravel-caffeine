@@ -6,7 +6,8 @@ Prevent forms from timing out when submitting them after leaving them on-screen 
 
 ## Implementation
 To achieve this, we are sending a caffeine-drip (a request at regular intervals) to keep the session from timing out.
-This is only implemented on pages with a `_token` field, so all other pages will time-out as normal.
+This is only implemented on pages with a `_token` field, so all other pages will time-out as normal. In the case that
+you have javascript templates, you can set the drip to occur on every page by using the 'dripOnEveryPage' config option.
 
 ## Reasoning
 I chose this approach to keep the integrity of site-security, by avoiding the following:
@@ -17,7 +18,7 @@ I chose this approach to keep the integrity of site-security, by avoiding the fo
 ## Considerations
 ### Routes
 This package adds the routes under `genealabs/laravel-caffeine`. Please verify that these don't collide with your 
-existing routes.
+existing routes. The url is configurable if you [publish the config](#configuration).
 
 ### Dependencies
 - Your project should be running Laravel 5.1.
@@ -42,12 +43,13 @@ existing routes.
   ```
 
 ## Configuration
-To change the default drip interval of 5 minutes, simply publish the configuration file:
+To change the default drip interval of 5 minutes, the drip url, or whether the drip should occur on every page, simply
+publish the configuration file:
 ```sh
 php artisan vendor:publish --tag=genealabs-laravel-caffeine
 ```
 
-You can now change the default value in `/app/config/genealabs-laravel-caffeine.php` as desired. Deleting the 
+You can now change the default values in `/app/config/genealabs-laravel-caffeine.php` as desired. Deleting the
 `/app/config/genealabs-laravel-caffeine.php` file will revert back to the default 5-minute interval.
 
 ## Usage
