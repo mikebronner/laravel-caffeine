@@ -28,8 +28,8 @@ class LaravelCaffeineDripMiddleware implements Middleware
             $content = $content->render();
         }
 
-        if (is_string($content) && strpos($content, '_token')) {
-            $content = str_replace('</body>', "<script>setInterval(function(){var e=window.XMLHttpRequest?new XMLHttpRequest:new ActiveXObject('Microsoft.XMLHTTP');e.open('GET','/genealabs/laravel-caffeine/drip',!0),e.send()}," . config('genealabs-laravel-caffeine.dripIntervalInMilliSeconds', 300000) . ");</script></body>", $content);
+        if (is_string($content) && strpos($content, '_token') || config('genealabs-laravel-caffeine.dripOnEveryPage', false)) {
+            $content = str_replace('</body>', "<script>setInterval(function(){var e=window.XMLHttpRequest?new XMLHttpRequest:new ActiveXObject('Microsoft.XMLHTTP');e.open('GET','" . config('genealabs-laravel-caffeine.route', 'genealabs/laravel-caffeine/drip') ."',!0),e.send()}," . config('genealabs-laravel-caffeine.dripIntervalInMilliSeconds', 300000) . ");</script></body>", $content);
             $response->setContent($content);
         }
 
