@@ -1,9 +1,8 @@
 <?php namespace GeneaLabs\LaravelCaffeine\Http\Middleware;
 
 use Closure;
-use Illuminate\Contracts\Routing\Middleware;
 
-class LaravelCaffeineDripMiddleware implements Middleware
+class LaravelCaffeineDripMiddleware
 {
     /**
      * Handle an incoming request.
