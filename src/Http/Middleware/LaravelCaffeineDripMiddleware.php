@@ -28,7 +28,7 @@ class LaravelCaffeineDripMiddleware
         }
 
         if (is_string($content) && strpos($content, '_token')) {
-            $content = str_replace('</body>', "<script>setInterval(function(){var e=window.XMLHttpRequest?new XMLHttpRequest:new ActiveXObject('Microsoft.XMLHTTP');e.open('GET','/genealabs/laravel-caffeine/drip',!0),e.send()}," . config('genealabs-laravel-caffeine.dripIntervalInMilliSeconds', 300000) . ");</script></body>", $content);
+            $content = str_replace('</body>', "<script>setInterval(function(){var e=window.XMLHttpRequest?new XMLHttpRequest:new ActiveXObject('Microsoft.XMLHTTP');e.open('GET','/genealabs/laravel-caffeine/drip',!0);e.setRequestHeader('X-Requested-With','XMLHttpRequest');e.send()}," . config('genealabs-laravel-caffeine.dripIntervalInMilliSeconds', 300000) . ");</script></body>", $content);
             $response->setContent($content);
         }
 
