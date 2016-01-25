@@ -29,12 +29,12 @@ existing routes.
 
    For Laravel 5.1:
    ```sh
-   composer require genealabs/laravel-caffeine:~0.2
+   composer require genealabs/laravel-caffeine:~0.2.0
    ```
 
    For Laravel 5.2:
    ```sh
-   composer require genealabs/laravel-caffeine:~0.3
+   composer require genealabs/laravel-caffeine:~0.3.0
    ```
 
 2. Add the service provider entry in `config\app.php`:
