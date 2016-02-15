@@ -27,8 +27,17 @@ class LaravelCaffeineDripMiddleware
             $content = $content->render();
         }
 
-        if (is_string($content) && strpos($content, '_token')) {
-            $content = str_replace('</body>', "<script>setInterval(function(){var e=window.XMLHttpRequest?new XMLHttpRequest:new ActiveXObject('Microsoft.XMLHTTP');e.open('GET','/genealabs/laravel-caffeine/drip',!0),e.send()}," . config('genealabs-laravel-caffeine.dripIntervalInMilliSeconds', 300000) . ");</script></body>", $content);
+        if (is_string($content)
+            && (strpos($content, '_token')
+                || (preg_match("\<meta name=[\"\']csrf[_-]token[\"\']", $content)))) {
+            $newContent = "<script>setInterval(function(){";
+            $newContent .= "var e=window.XMLHttpRequest?new XMLHttpRequest:new ActiveXObject('Microsoft.XMLHTTP');";
+            $newContent .= "e.open('GET','" . url('/genealabs/laravel-caffeine/drip') . "',!0);";
+            $newContent .= "e.setRequestHeader('X-Requested-With','XMLHttpRequest');";
+            $newContent .= "e.send();},";
+            $newContent .= config('genealabs-laravel-caffeine.dripIntervalInMilliSeconds', 300000);
+            $newContent .= ");</script></body>";
+            $content = str_replace('</body>', $newContent, $content);
             $response->setContent($content);
         }
 
