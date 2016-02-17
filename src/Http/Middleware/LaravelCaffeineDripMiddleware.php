@@ -29,7 +29,7 @@ class LaravelCaffeineDripMiddleware
 
         if (is_string($content)
             && (strpos($content, '_token')
-                || (preg_match("\<meta name=[\"\']csrf[_-]token[\"\']", $content)))) {
+                || (preg_match("/<meta name=[\"\']csrf[_-]token[\"\']/", $content)))) {
             $newContent = "<script>setInterval(function(){";
             $newContent .= "var e=window.XMLHttpRequest?new XMLHttpRequest:new ActiveXObject('Microsoft.XMLHTTP');";
             $newContent .= "e.open('GET','" . url('/genealabs/laravel-caffeine/drip') . "',!0);";
