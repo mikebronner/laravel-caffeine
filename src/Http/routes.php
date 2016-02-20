@@ -15,7 +15,11 @@ function hasWebMiddleware()
     $routes = Route::getRoutes()->getRoutes();
 
     foreach ($routes as $route) {
-        if (in_array('web', $route->getAction()['middleware'])) {
+        $actions = (array) $route->getAction();
+
+        if (array_key_exists('middleware', $actions)
+            && in_array('web', $actions['middleware'])
+        ) {
             return true;
         }
     }
