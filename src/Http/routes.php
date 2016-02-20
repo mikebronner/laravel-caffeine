@@ -18,7 +18,7 @@ function hasWebMiddleware()
         $actions = (array) $route->getAction();
 
         if (array_key_exists('middleware', $actions)
-            && in_array('web', $actions['middleware'])
+            && in_array('web', (array) $actions['middleware'])
         ) {
             return true;
         }
