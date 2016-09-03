@@ -12,12 +12,12 @@ class LaravelCaffeineServiceProvider extends ServiceProvider
             require __DIR__ . '/Http/routes.php';
         }
 
-        $this->publishes([__DIR__ . '/../config/config.php' => config_path('genealabs-laravel-caffeine.php')], 'genealabs-laravel-caffeine');
+        $this->publishes([__DIR__ . '/../config/genealabs-laravel-caffeine.php' => config_path('genealabs-laravel-caffeine.php')], 'genealabs-laravel-caffeine');
     }
 
     public function register()
     {
-        // Nothing to see here, folks ...
+        $this->mergeConfigFrom(__DIR__ . '/../config/genealabs-laravel-caffeine.php', 'genealabs-laravel-caffeine');
     }
 
     /**
