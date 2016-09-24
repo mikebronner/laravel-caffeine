@@ -42,12 +42,12 @@ existing routes.
            GeneaLabs\LaravelCaffeine\LaravelCaffeineServiceProvider::class,
    ```
 
-3. Register the middleware class in `app/Http/kernel.php`:
+3. You no longer have to register the middleware manually. If you have done so
+   previously, please remove the following middleware from `/app/Http/Kernel.php`:
    ```php
-       protected $middleware = [
-           // other entries above
+//       protected $middleware = [
            \GeneaLabs\LaravelCaffeine\Http\Middleware\LaravelCaffeineDripMiddleware::class,
-       ];
+//       ];
    ```
 
 ## Configuration
