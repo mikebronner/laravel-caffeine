@@ -1,6 +1,4 @@
-<?php
-
-namespace GeneaLabs\LaravelCaffeine\Http\Middleware;
+<?php namespace GeneaLabs\LaravelCaffeine\Http\Middleware;
 
 use Closure;
 

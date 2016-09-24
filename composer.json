@@ -14,8 +14,8 @@
         }
     },
     "require": {
-        "php": ">=5.5.0",
-        "illuminate/support": "~5.1",
-        "illuminate/routing": "~5.1"
+        "php": ">=7.0.0",
+        "illuminate/support": "5.1.* || 5.3.*",
+        "illuminate/routing": "5.1.* || 5.3.*"
     }
 }
