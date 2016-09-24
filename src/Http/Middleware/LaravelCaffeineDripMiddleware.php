@@ -14,18 +14,8 @@ class LaravelCaffeineDripMiddleware
      */
     public function handle($request, Closure $next)
     {
-        $content = null;
         $response = $next($request);
-
-        if (!method_exists($response, 'getOriginalContent')) {
-            return $response;
-        }
-
-        $content = $response->getOriginalContent();
-
-        if (method_exists($content, 'render')) {
-            $content = $content->render();
-        }
+        $content = $response->getContent();
 
         if (is_string($content)
             && (strpos($content, '_token')
