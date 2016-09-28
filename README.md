@@ -40,7 +40,7 @@ This package adds the routes under `genealabs/laravel-caffeine`. Please verify
 
 2. Add the service provider entry in `config\app.php`:
    ```php
-           GeneaLabs\LaravelCaffeine\LaravelCaffeineServiceProvider::class,
+           GeneaLabs\LaravelCaffeine\Providers\LaravelCaffeineService::class,
    ```
 
 3. You no longer have to register the middleware manually. If you have done so
