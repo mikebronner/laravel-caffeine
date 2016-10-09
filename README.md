@@ -28,15 +28,12 @@ This package adds the routes under `genealabs/laravel-caffeine`. Please verify
 - PHP 7.0.0 or higher.
 
 ## Installation
-1. Installation for Laravel LTS or CURRENT:
+1. Installation for Laravel LTS (5.1) or CURRENT (5.3):
    ```sh
    composer require genealabs/laravel-caffeine
    ```
 
-   For Laravel 5.2:
-   ```sh
-   composer require genealabs/laravel-caffeine:~0.3.11
-   ```
+   For Laravel 5.2, follow the directions here: https://github.com/GeneaLabs/laravel-caffeine/tree/166e2ca08af7cc62a59360f33e03d1cb8478df6a
 
 2. Add the service provider entry in `config\app.php`:
    ```php
