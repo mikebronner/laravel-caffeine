@@ -1,17 +1,17 @@
 # Issue
-__summarize your issue here__
+*summarize your issue here*
 
 ## Environment
-Laravel Version: __5.y.z__
-Laravel Caffeine Package Version: __0.y.z__
-PHP Version: __x.y.z__
-Homestead Version: __x.y__
+Laravel Version: *5.y.z*
+Laravel Caffeine Package Version: *0.y.z*
+PHP Version: *x.y.z*
+Homestead Version: *x.y*
 
 ## Stack Trace
 - [ ] I have cleared my Laravel log file.
 - [ ] I have then reproduced my issue.
-- [ ] I have copied the **first** listed stack trace from the fresh log file.
+- [ ] I have copied the __first__ listed stack trace from the fresh log file.
 
 ```
-__paste the first stack trace here__
+*paste the first stack trace here*
 ```
