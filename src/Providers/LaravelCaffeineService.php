@@ -1,6 +1,7 @@
 <?php namespace GeneaLabs\LaravelCaffeine\Providers;
 
 use GeneaLabs\LaravelCaffeine\Http\Middleware\LaravelCaffeineDripMiddleware;
+use Illuminate\Config\Repository as Cache;
 use Illuminate\Support\ServiceProvider;
 
 class LaravelCaffeineService extends ServiceProvider
@@ -9,9 +10,7 @@ class LaravelCaffeineService extends ServiceProvider
 
     public function boot()
     {
-        app('router')->group($this->middlewareGroupExists('web')
-            ? ['middleware' => 'web']
-            : [], function () {
+        app('router')->group($this->getRouteGroupOptions(), function () {
                 require __DIR__ . '/../../routes/web.php';
             });
 
@@ -30,7 +29,24 @@ class LaravelCaffeineService extends ServiceProvider
         return ['genealabs-laravel-caffeine'];
     }
 
-    private function middlewareGroupExists(string $group) : bool
+    /**
+     * If the programmer defined something other than null in the configuration file we will use their config.
+     * Otherwise we will check if the web middleware exists, if not we will have no middleware.
+     *
+     * @return array
+     */
+    protected function getRouteGroupOptions() : array
+    {
+        $middleware_config = app(Cache::class)->get('genealabs-laravel-caffeine.middleware');
+
+        if ($middleware_config) {
+            return is_array($middleware_config) ? $middleware_config : ['middleware' => $middleware_config];
+        }
+
+        return $this->middlewareGroupExists('web') ? ['middleware' => 'web'] : [];
+    }
+
+    protected function middlewareGroupExists(string $group) : bool
     {
         $routes = collect(app('router')->getRoutes()->getRoutes());
 
