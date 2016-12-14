@@ -60,7 +60,7 @@ The following elements are configurable:
  the drip URL in the browser. This is just cosmetic.
 - **dripIntervalInMilliSeconds:** (default: 5 mins) Change to configure the drip
  interval.
-- **middleware:** (default: 5 mins) Change to set the middleware for the drip route to be grouped into.
+- **middleware:** (default: NULL|web) Change to set the middleware for the drip route to be grouped into.
  Defaults to web if web exists, otherwise it is not grouped.
 
 ___Only publish the config file it you need to customize it___:
