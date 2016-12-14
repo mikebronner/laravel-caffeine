@@ -40,7 +40,7 @@ class LaravelCaffeineService extends ServiceProvider
         $middleware_config = app(Cache::class)->get('genealabs-laravel-caffeine.middleware');
 
         if ($middleware_config) {
-            return is_array($middleware_config) ? $middleware_config : ['middleware' => $middleware_config];
+            return ['middleware' => $middleware_config];
         }
 
         return $this->middlewareGroupExists('web') ? ['middleware' => 'web'] : [];
