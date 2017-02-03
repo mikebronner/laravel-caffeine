@@ -58,7 +58,7 @@ The following elements are configurable:
 - **dripIntervalInMilliSeconds:** (default: 5 mins) Change to configure the drip
  interval.
 
-___Only publish the config file it you need to customize it___:
+___Only publish the config file if you need to customize it___:
 ```sh
 php artisan vendor:publish --tag=genealabs-laravel-caffeine
 ```
