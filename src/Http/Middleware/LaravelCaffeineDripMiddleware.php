@@ -21,7 +21,7 @@ class LaravelCaffeineDripMiddleware
             && (strpos($content, '_token')
                 || (preg_match("/\<meta name=[\"\']csrf[_-]token[\"\']/", $content)))
         ) {
-            $domain = config('genealabs-laravel-caffeine.domain', url('/'));
+            $domain = config('genealabs-laravel-caffeine.domain', url('/', null, $secure = (!isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] != 'on')));
             $route = config('genealabs-laravel-caffeine.route', 'genealabs/laravel-caffeine/drip');
             $dripUrl = trim($domain, ' /') . "/" . trim($route, ' /');
             $interval = config('genealabs-laravel-caffeine.dripIntervalInMilliSeconds', 300000);
