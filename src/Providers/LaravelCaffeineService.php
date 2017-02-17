@@ -51,7 +51,7 @@ class LaravelCaffeineService extends ServiceProvider
         $routes = collect(app('router')->getRoutes()->getRoutes());
 
         return $routes->reduce(function ($carry, $route) use ($group) {
-            $carry = $carry ?? false;
+            $carry = ($carry ?? false) ?: false;
             $actions = (array) $route->getAction();
 
             if (array_key_exists('middleware', $actions)
@@ -61,6 +61,6 @@ class LaravelCaffeineService extends ServiceProvider
             }
 
             return $carry;
-        });
+        }) ?? false;
     }
 }
