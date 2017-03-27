@@ -41,10 +41,10 @@ This package adds the routes under `genealabs/laravel-caffeine`. Please verify
    ```
 
 3. You no longer have to register the middleware manually. If you have done so
-   previously, please remove the following middleware from `/app/Http/Kernel.php`:
+   previously, please remove the following middleware from `app/Http/Kernel.php`:
    ```php
 //       protected $middleware = [
-           \GeneaLabs\LaravelCaffeine\Http\Middleware\LaravelCaffeineDripMiddleware::class,
+           GeneaLabs\LaravelCaffeine\Http\Middleware\LaravelCaffeineDripMiddleware::class,
 //       ];
    ```
 
@@ -63,8 +63,8 @@ ___Only publish the config file if you need to customize it___:
 php artisan vendor:publish --tag=genealabs-laravel-caffeine
 ```
 
-You can now change the default value in `/app/config/genealabs-laravel-caffeine.php` as desired. Deleting the
-`/app/config/genealabs-laravel-caffeine.php` file will revert back to the default settings.
+You can now change the default value in `config/genealabs-laravel-caffeine.php` as desired. Deleting the
+`config/genealabs-laravel-caffeine.php` file will revert back to the default settings.
 
 ## Usage
 That was it! It will apply itself automatically where it finds a form with a `_token` field, or a meta tag named
