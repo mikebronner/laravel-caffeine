@@ -43,9 +43,9 @@ This package adds the routes under `genealabs/laravel-caffeine`. Please verify
 3. You no longer have to register the middleware manually. If you have done so
    previously, please remove the following middleware from `app/Http/Kernel.php`:
    ```php
-//       protected $middleware = [
-           GeneaLabs\LaravelCaffeine\Http\Middleware\LaravelCaffeineDripMiddleware::class,
-//       ];
+         protected $middleware = [
+             GeneaLabs\LaravelCaffeine\Http\Middleware\LaravelCaffeineDripMiddleware::class,
+         ];
    ```
 
 ## Configuration
