@@ -35,7 +35,7 @@ This package adds the routes under `genealabs/laravel-caffeine`. Please verify
 
    For Laravel 5.2, follow the directions here: https://github.com/GeneaLabs/laravel-caffeine/tree/166e2ca08af7cc62a59360f33e03d1cb8478df6a
 
-2. Add the service provider entry in `config\app.php`:
+2. Add the service provider entry in `config/app.php`:
    ```php
            GeneaLabs\LaravelCaffeine\Providers\LaravelCaffeineService::class,
    ```
