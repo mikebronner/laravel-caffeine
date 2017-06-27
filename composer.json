@@ -15,6 +15,7 @@
     },
     "require": {
         "php": ">=7.0.0",
+        "illuminate/config": "5.1.* || 5.3.* || 5.4.*",
         "illuminate/support": "5.1.* || 5.3.* || 5.4.*",
         "illuminate/routing": "5.1.* || 5.3.* || 5.4.*"
     }
