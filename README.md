@@ -24,27 +24,32 @@ This package adds the routes under `genealabs/laravel-caffeine`. Please verify
  that these don't collide with your existing routes.
 
 ### Dependencies
-- Your project must be running Laravel 5.1 (LTS) or 5.3 (CURRENT).
+- Your project must be running one of the following Laravel versions:
+  - 5.1 (LTS)
+  - 5.3
+  - 5.4
+  - 5.5 (LTS)
 - PHP 7.0.0 or higher.
 
 ## Installation
-1. Installation for Laravel LTS (5.1) or CURRENT (5.3):
-   
+For Laravel 5.2, follow the directions here: https://github.com/GeneaLabs/laravel-caffeine/tree/166e2ca08af7cc62a59360f33e03d1cb8478df6a
+
+1. Install the package:
    ```sh
    composer require genealabs/laravel-caffeine
    ```
 
-   For Laravel 5.2, follow the directions here: https://github.com/GeneaLabs/laravel-caffeine/tree/166e2ca08af7cc62a59360f33e03d1cb8478df6a
 
-2. Add the service provider entry in `config/app.php`:
+2. **This is only required for Laravel 5.4 or below:**
+   Add the service provider entry in `config/app.php`:
    ```php
    // 'providers' => [
        GeneaLabs\LaravelCaffeine\Providers\LaravelCaffeineService::class,
    // ],
    ```
 
-3. You no longer have to register the middleware manually. If you have done so
-   previously, please remove the following middleware from `app/Http/Kernel.php`:
+3. If you have previously registered the middleware, please remove the following
+   middleware from `app/Http/Kernel.php`:
    ```php
    // protected $middleware = [
        GeneaLabs\LaravelCaffeine\Http\Middleware\LaravelCaffeineDripMiddleware::class,
