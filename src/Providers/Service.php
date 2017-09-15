@@ -1,5 +1,6 @@
 <?php namespace GeneaLabs\LaravelCaffeine\Providers;
 
+use GeneaLabs\LaravelCaffeine\Console\Commands\Publish;
 use GeneaLabs\LaravelCaffeine\Http\Middleware\LaravelCaffeineDripMiddleware;
 use Illuminate\Support\ServiceProvider;
 
@@ -15,11 +16,16 @@ class Service extends ServiceProvider
                 require __DIR__ . '/../../routes/web.php';
             });
 
-        $this->publishes([__DIR__ . '/../../config/genealabs-laravel-caffeine.php' => config_path('genealabs-laravel-caffeine.php')], 'genealabs-laravel-caffeine');
+        $configPath = __DIR__ . '/../../config/genealabs-laravel-caffeine.php';
+        $this->mergeConfigFrom($configPath, 'genealabs-laravel-caffeine');
+        $this->publishes([
+            $configPath => config_path('genealabs-laravel-caffeine.php')
+        ], 'config');
     }
 
     public function register()
     {
+        $this->commands(Publish::class);
         $this->mergeConfigFrom(__DIR__ . '/../../config/genealabs-laravel-caffeine.php', 'genealabs-laravel-caffeine');
 
         app('Illuminate\Contracts\Http\Kernel')->pushMiddleware('\GeneaLabs\LaravelCaffeine\Http\Middleware\LaravelCaffeineDripMiddleware');
