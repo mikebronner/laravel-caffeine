@@ -3,7 +3,7 @@
 use GeneaLabs\LaravelCaffeine\Http\Middleware\LaravelCaffeineDripMiddleware;
 use Illuminate\Support\ServiceProvider;
 
-class LaravelCaffeineService extends ServiceProvider
+class Service extends ServiceProvider
 {
     protected $defer = false;
 

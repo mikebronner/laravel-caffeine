@@ -1,5 +1,13 @@
 ![Coffee for Laravel](https://github.com/GeneaLabs/laravel-caffeine/blob/master/caffeine.jpg)
 
+# Caffeine for Laravel
+[![Travis](https://img.shields.io/travis/GeneaLabs/laravel-caffeine.svg)](https://travis-ci.org/GeneaLabs/laravel-caffeine)
+[![SensioLabs Insight](https://img.shields.io/sensiolabs/i/bbe4a85d-2dd0-46a5-8930-8669ea7259f8.svg)](https://insight.sensiolabs.com/projects/bbe4a85d-2dd0-46a5-8930-8669ea7259f8/analyses/1)
+[![Scrutinizer](https://img.shields.io/scrutinizer/g/GeneaLabs/laravel-caffeine.svg)](https://scrutinizer-ci.com/g/GeneaLabs/laravel-caffeine)
+[![Coveralls](https://img.shields.io/coveralls/GeneaLabs/laravel-caffeine.svg)](https://coveralls.io/github/GeneaLabs/laravel-caffeine)
+[![GitHub (pre-)release](https://img.shields.io/github/release/GeneaLabs/laravel-caffeine/all.svg)](https://github.com/GeneaLabs/laravel-caffeine)
+[![Packagist](https://img.shields.io/packagist/dt/GeneaLabs/laravel-caffeine.svg)](https://packagist.org/packages/genealabs/laravel-caffeine)
+
 ## Goal
 Prevent forms from timing out when submitting them after leaving them on-screen
  for a considerable amount of time. (Laravel defaults to 120 minutes, but that

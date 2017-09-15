@@ -8,20 +8,29 @@
             "email": "hello@genealabs.com"
         }
     ],
-    "autoload": {
-        "psr-4": {
-            "GeneaLabs\\LaravelCaffeine\\": "src/"
-        }
-    },
     "require": {
         "php": ">=7.0.0",
-        "illuminate/support": "5.1.* || 5.3.* || 5.4.* || 5.5.*",
-        "illuminate/routing": "5.1.* || 5.3.* || 5.4.* || 5.5.*"
+        "illuminate/support": "5.5.*",
+        "illuminate/routing": "5.5.*"
+    },
+    "require-dev": {
+        "laravel/laravel": "5.5.*",
+        "mockery/mockery": "0.9.*",
+        "phpmd/phpmd": "^2.6",
+        "phpunit/phpunit": "5.7.*",
+        "satooshi/php-coveralls" : "dev-master@dev",
+        "sebastian/phpcpd": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "GeneaLabs\\LaravelCaffeine\\": "src/",
+            "GeneaLabs\\LaravelCaffeine\\Tests\\": "tests/"
+        }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "GeneaLabs\\LaravelCaffeine\\Providers\\LaravelCaffeineService"
+                "GeneaLabs\\LaravelCaffeine\\Providers\\Service"
             ]
         }
     }

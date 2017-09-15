@@ -2,8 +2,8 @@
 *summarize your issue here*
 
 ## Environment
-Laravel Version: *5.y.z*
-Laravel Caffeine Package Version: *0.y.z*
+Laravel Version: *x.y.z*
+Laravel Caffeine Package Version: *x.y.z*
 PHP Version: *x.y.z*
 Homestead Version: *x.y*
 
