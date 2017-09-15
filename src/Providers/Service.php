@@ -3,6 +3,7 @@
 use GeneaLabs\LaravelCaffeine\Console\Commands\Publish;
 use GeneaLabs\LaravelCaffeine\Http\Middleware\LaravelCaffeineDripMiddleware;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Routing\Route;
 
 class Service extends ServiceProvider
 {
@@ -40,7 +41,7 @@ class Service extends ServiceProvider
     {
         $routes = collect(app('router')->getRoutes()->getRoutes());
 
-        return $routes->reduce(function ($carry, $route) use ($group) {
+        return $routes->reduce(function ($carry, Route $route) use ($group) {
             $carry = ($carry ?? false) ?: false;
             $actions = (array) $route->getAction();
 
