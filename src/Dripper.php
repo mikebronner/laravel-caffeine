@@ -25,9 +25,9 @@ class Dripper extends Model
     public function getHtmlAttribute() : string
     {
         return '<script>setInterval(function(){'
-            . "var e=window.XMLHttpRequest?new XMLHttpRequest:new ActiveXObject('Microsoft.XMLHTTP');";
-            . "e.open('GET','{$this->url}',!0);";
-            . "e.setRequestHeader('X-Requested-With','XMLHttpRequest');";
+            . "var e=window.XMLHttpRequest?new XMLHttpRequest:new ActiveXObject('Microsoft.XMLHTTP');"
+            . "e.open('GET','{$this->url}',!0);"
+            . "e.setRequestHeader('X-Requested-With','XMLHttpRequest');"
             . "e.send();}, {$this->interval});</script>";
     }
 }
