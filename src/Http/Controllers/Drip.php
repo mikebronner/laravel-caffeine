@@ -2,11 +2,10 @@
 
 use Illuminate\Routing\Controller;
 use Illuminate\View\View;
-use Symfony\Component\HttpFoundation\Response;
 
 class Drip extends Controller
 {
-    public function drip() : Response
+    public function drip()
     {
         return response('', 204);
     }
