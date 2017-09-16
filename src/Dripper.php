@@ -1,7 +1,11 @@
-<?php namespace GeneaLabs\LaravelMessenger;
+<?php namespace GeneaLabs\LaravelCaffeine;
 
 use Jenssegers\Model\Model;
 
+/**
+ * @property string $url
+ * @property string $interval
+ */
 class Dripper extends Model
 {
     public function getUrlAttribute() : string

@@ -1,4 +1,4 @@
-<?php namespace GeneaLabs\LaravelCaffeine\Tests\Unit;
+<?php namespace GeneaLabs\LaravelCaffeine\Tests\Unit\Providers;
 
 use Exception;
 use GeneaLabs\LaravelCaffeine\Providers\Service;
