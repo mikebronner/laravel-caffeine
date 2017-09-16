@@ -22,4 +22,12 @@ class DripperTest extends TestCase
 
         $this->assertEquals($expectedResult, $actualResult);
     }
+
+    public function testHtmlAttributeValue()
+    {
+        $expectedResult = "<script>setInterval(function(){var e=window.XMLHttpRequest?new XMLHttpRequest:new ActiveXObject('Microsoft.XMLHTTP');e.open('GET','/genealabs/laravel-caffeine/drip',!0);e.setRequestHeader('X-Requested-With','XMLHttpRequest');e.send();}, 300000);</script>";
+        $actualResult = (new Dripper)->html;
+
+        $this->assertEquals($expectedResult, $actualResult);
+    }
 }
