@@ -13,11 +13,5 @@ class Test extends Controller
         return view('genealabs-laravel-caffeine::tests.form');
     }
 
-    public function expiredForm() : View
-    {
-        config()->set('session.lifetime', 1);
-        config()->set('genealabs-laravel-caffeine.dripIntervalInMilliSeconds', 300000);
-
-        return view('genealabs-laravel-caffeine.tests.form');
-    }
+    // TODO: figure out a way to test ajax drip
 }
