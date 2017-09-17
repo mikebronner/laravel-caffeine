@@ -10,7 +10,7 @@ class Test extends Controller
         config()->set('session.lifetime', 1);
         config()->set('genealabs-laravel-caffeine.dripIntervalInMilliSeconds', 50000);
 
-        return view('genealabs-laravel-caffeine::tests.non-expired');
+        return view('genealabs-laravel-caffeine::tests.form');
     }
 
     public function expiredForm() : View
@@ -18,6 +18,6 @@ class Test extends Controller
         config()->set('session.lifetime', 1);
         config()->set('genealabs-laravel-caffeine.dripIntervalInMilliSeconds', 300000);
 
-        return view('genealabs-laravel-caffeine::tests.expired');
+        return view('genealabs-laravel-caffeine.tests.form');
     }
 }

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('genealabs-laravel-caffeine::tests.layout')
 
 @section('content')
     <form method="post">

@@ -1,8 +1,8 @@
 <?php namespace GeneaLabs\LaravelCaffeine\Http\Middleware;
 
+use Closure;
 use GeneaLabs\LaravelCaffeine\Dripper;
 use Illuminate\Http\Request;
-use Closure;
 
 class LaravelCaffeineDripMiddleware
 {

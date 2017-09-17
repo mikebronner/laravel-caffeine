@@ -19,6 +19,10 @@ class Service extends ServiceProvider
 
         $configPath = __DIR__ . '/../../config/genealabs-laravel-caffeine.php';
         $this->mergeConfigFrom($configPath, 'genealabs-laravel-caffeine');
+        $this->loadViewsFrom(
+            __DIR__ . '/../../resources/views',
+            'genealabs-laravel-caffeine'
+        );
         $this->publishes([
             $configPath => config_path('genealabs-laravel-caffeine.php')
         ], 'config');
