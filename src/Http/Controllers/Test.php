@@ -12,6 +12,4 @@ class Test extends Controller
 
         return view('genealabs-laravel-caffeine::tests.form');
     }
-
-    // TODO: figure out a way to test ajax drip
 }
