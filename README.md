@@ -1,6 +1,7 @@
 ![Coffee for Laravel](https://github.com/GeneaLabs/laravel-caffeine/blob/master/caffeine.jpg)
 
 # Caffeine for Laravel
+[![Join the chat at https://gitter.im/GeneaLabs/laravel-caffeine](https://badges.gitter.im/GeneaLabs/laravel-caffeine.svg)](https://gitter.im/GeneaLabs/laravel-caffeine?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Travis](https://img.shields.io/travis/GeneaLabs/laravel-caffeine.svg)](https://travis-ci.org/GeneaLabs/laravel-caffeine)
 [![SensioLabs Insight](https://img.shields.io/sensiolabs/i/bbe4a85d-2dd0-46a5-8930-8669ea7259f8.svg)](https://insight.sensiolabs.com/projects/bbe4a85d-2dd0-46a5-8930-8669ea7259f8/analyses/1)
 [![Scrutinizer](https://img.shields.io/scrutinizer/g/GeneaLabs/laravel-caffeine.svg)](https://scrutinizer-ci.com/g/GeneaLabs/laravel-caffeine)
