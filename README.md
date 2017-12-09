@@ -17,8 +17,12 @@ Prevent forms from timing out when submitting them after leaving them on-screen
 ## Implementation
 To achieve this, we are sending a caffeine-drip (a request at regular intervals)
  to keep the session from timing out.
+
 This is only implemented on pages with a `_token` field, so all other pages will
  time-out as normal.
+ 
+If the drip misses the interval window - for example, after waking up your device
+- it will reload the page for a new token.
 
 ## Reasoning
 I chose this approach to keep the integrity of site-security, by avoiding the
@@ -30,7 +34,8 @@ I chose this approach to keep the integrity of site-security, by avoiding the
 ## Considerations
 ### Routes
 This package adds the routes under `genealabs/laravel-caffeine`. Please verify
- that these don't collide with your existing routes.
+ that these don't collide with your existing routes, although this can be
+ changed in the configuration file.
 
 ### Dependencies
 - Your project must be running one of the following Laravel versions:
@@ -47,7 +52,6 @@ For Laravel 5.2, follow the directions here: https://github.com/GeneaLabs/larave
    ```sh
    composer require genealabs/laravel-caffeine
    ```
-
 
 2. **This is only required for Laravel 5.4 or below:**
    Add the service provider entry in `config/app.php`:
@@ -71,9 +75,14 @@ The following elements are configurable:
  your app. This is useful if you are behind a proxy or load-balancer. ___Do not use
  the `url()` helper in the config file.___
 - **route:** (default: `genealabs/laravel-caffeine/drip`) Change to customize
- the drip URL in the browser. This is just cosmetic.
+ the drip URL in the browser. This is just cosmetic; it can be `/204-drip` for
+ example.
 - **dripIntervalInMilliSeconds:** (default: 5 mins) Change to configure the drip
  interval.
+- **thresholdDifference:** (default: 10 secs) For how much we consider th drip miss
+or old, to restart the browser.
+- **checkLastDripInterval:** (default: 2 secs) Interval to check if the drip
+is considered old.
 
 ___Only publish the config file if you need to customize it___:
 ```sh
