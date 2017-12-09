@@ -46,7 +46,7 @@ class Dripper extends Model
     {
         return config(
             'genealabs-laravel-caffeine.thresholdDifference',
-            60000
+            10000
         );
     }
     
