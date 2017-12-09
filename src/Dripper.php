@@ -2,59 +2,38 @@
 
 use Jenssegers\Model\Model;
 
-/**
- * @property string $html
- * @property string $interval
- * @property string $url
- */
 class Dripper extends Model
 {
     public function getHtmlAttribute() : string
     {
-        
-        return '<script>'
-            . "let ld = new Date();"
-            . "function caffeineSendDrip () {"
-            . "    let e = window.XMLHttpRequest ? new XMLHttpRequest : new ActiveXObject('Microsoft.XMLHTTP');"
-            . "    e.onreadystatechange = function () {"
-            . "        if (e.readyState === 4 && e.status === 204) {"
-            . "            ld = new Date();"
-            . "        }"
-            . "    };"
-            . "    e.open('GET', '{$this->url}', !0);"
-            . "    e.setRequestHeader('X-Requested-With', 'XMLHttpRequest');"
-            . "    e.send();"
-            . "}"
-            . "setInterval(function () { caffeineSendDrip(); }, $this->interval);"
-            . "setInterval(function () {"
-            . "    if (new Date() - ld >= $this->interval + $this->threshold) {"
-            . "        location.reload(true);"
-            . "    }"
-            . "}, $this->checkInterval);"
-            . "</script>";
+        $html = (string) view('genealabs-laravel-caffeine::script')
+            ->with([
+                'ageCheckInterval' => $this->ageCheckInterval,
+                'ageThreshold' => $this->ageThreshold,
+                'interval' => $this->interval,
+                'url' => $this->url,
+            ]);
+        return $html;
+    }
+
+    public function getAgeCheckIntervalAttribute() : int
+    {
+        return config(
+            'genealabs-laravel-caffeine.outdatedDripCheckInterval',
+            2000
+        );
+    }
+
+    public function getAgeThresholdAttribute() : int
+    {
+        return (config('session.lifetime', 32) - 2) * 60000;
     }
 
     public function getIntervalAttribute() : string
     {
         return config(
-            'genealabs-laravel-caffeine.dripIntervalInMilliSeconds',
+            'genealabs-laravel-caffeine.dripInterval',
             300000
-        );
-    }
-    
-    public function getThresholdAttribute() : int
-    {
-        return config(
-            'genealabs-laravel-caffeine.thresholdDifference',
-            10000
-        );
-    }
-    
-    public function getCheckIntervalAttribute() : int
-    {
-        return config(
-            'genealabs-laravel-caffeine.checkLastDripInterval',
-            2000
         );
     }
 

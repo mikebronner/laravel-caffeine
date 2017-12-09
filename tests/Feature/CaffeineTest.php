@@ -14,7 +14,7 @@ class CaffeineTest extends TestCase
 
     public function testMiddlewareInjectsDripScript()
     {
-        $expectedResult = "<script>setInterval(function(){var e=window.XMLHttpRequest?new XMLHttpRequest:new ActiveXObject('Microsoft.XMLHTTP');e.open('GET','/genealabs/laravel-caffeine/drip',!0);e.setRequestHeader('X-Requested-With','XMLHttpRequest');e.send();}, 50000);</script>";
+        $expectedResult = file_get_contents(__DIR__ . '/../Fixtures/expired_script.txt');
 
         $response = $this->get(route('genealabs-laravel-caffeine.tests.form'));
 

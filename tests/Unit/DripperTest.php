@@ -7,9 +7,28 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class DripperTest extends TestCase
 {
+    public function testAgeCheckIntervalAttributeValue()
+    {
+        $expectedResult = 2000;
+
+        $actualResult = (new Dripper)->ageCheckInterval;
+
+        $this->assertEquals($expectedResult, $actualResult);
+    }
+
+    public function testAgeThresholdAttributeValue()
+    {
+        $expectedResult = 7080000;
+
+        $actualResult = (new Dripper)->ageThreshold;
+
+        $this->assertEquals($expectedResult, $actualResult);
+    }
+
     public function testUrlAttributeValue()
     {
         $expectedResult = "/genealabs/laravel-caffeine/drip";
+
         $actualResult = (new Dripper)->url;
 
         $this->assertEquals($expectedResult, $actualResult);
@@ -18,6 +37,7 @@ class DripperTest extends TestCase
     public function testIntervalAttributeValue()
     {
         $expectedResult = 300000;
+
         $actualResult = (new Dripper)->interval;
 
         $this->assertEquals($expectedResult, $actualResult);
@@ -25,9 +45,10 @@ class DripperTest extends TestCase
 
     public function testHtmlAttributeValue()
     {
-        $expectedResult = "<script>setInterval(function(){var e=window.XMLHttpRequest?new XMLHttpRequest:new ActiveXObject('Microsoft.XMLHTTP');e.open('GET','/genealabs/laravel-caffeine/drip',!0);e.setRequestHeader('X-Requested-With','XMLHttpRequest');e.send();}, 300000);</script>";
+        $expectedResult = file_get_contents(__DIR__ . '/../Fixtures/unexpired_script.txt');
+
         $actualResult = (new Dripper)->html;
 
-        $this->assertEquals($expectedResult, $actualResult);
+        $this->assertEquals($actualResult, $expectedResult);
     }
 }
