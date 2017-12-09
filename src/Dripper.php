@@ -25,7 +25,7 @@ class Dripper extends Model
             . "    e.setRequestHeader('X-Requested-With', 'XMLHttpRequest');"
             . "    e.send();"
             . "}"
-            . "setInterval(caffeineSendDrip()), $this->interval);"
+            . "setInterval(function () { caffeineSendDrip(); }, $this->interval);"
             . "setInterval(function () {"
             . "    if (new Date() - caffeineLastDrip >= $this->threshold ) {"
             . "        location.reload(true);"
