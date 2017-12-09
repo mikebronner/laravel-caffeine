@@ -13,12 +13,12 @@ class Dripper extends Model
     {
         
         return '<script>'
-            . "let caffeineLastDrip = new Date();"
+            . "let ld = new Date();"
             . "function caffeineSendDrip () {"
             . "    let e = window.XMLHttpRequest ? new XMLHttpRequest : new ActiveXObject('Microsoft.XMLHTTP');"
             . "    e.onreadystatechange = function () {"
             . "        if (e.readyState === 4 && e.status === 204) {"
-            . "            caffeineLastDrip = new Date();"
+            . "            ld = new Date();"
             . "        }"
             . "    };"
             . "    e.open('GET', '{$this->url}', !0);"
@@ -27,7 +27,7 @@ class Dripper extends Model
             . "}"
             . "setInterval(function () { caffeineSendDrip(); }, $this->interval);"
             . "setInterval(function () {"
-            . "    if (new Date() - caffeineLastDrip >= $this->threshold ) {"
+            . "    if (new Date() - ld >= $this->threshold ) {"
             . "        location.reload(true);"
             . "    }"
             . "}, $this->checkInterval);"
