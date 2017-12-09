@@ -37,22 +37,6 @@ class Dripper extends Model
         );
     }
 
-    public function getThresholdAttribute() : int
-    {
-        return config(
-            'genealabs-laravel-caffeine.thresholdDifference',
-            10000
-        );
-    }
-
-    public function getCheckIntervalAttribute() : int
-    {
-        return config(
-            'genealabs-laravel-caffeine.checkLastDripInterval',
-            2000
-        );
-    }
-
     public function getUrlAttribute() : string
     {
         return trim(config('genealabs-laravel-caffeine.domain', url('/')), '/')
