@@ -27,7 +27,7 @@ class Dripper extends Model
             . "}"
             . "setInterval(function () { caffeineSendDrip(); }, $this->interval);"
             . "setInterval(function () {"
-            . "    if (new Date() - ld >= $this->threshold ) {"
+            . "    if (new Date() - ld >= $this->interval + $this->threshold ) {"
             . "        location.reload(true);"
             . "    }"
             . "}, $this->checkInterval);"
