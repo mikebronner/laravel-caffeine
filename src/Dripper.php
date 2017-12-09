@@ -36,7 +36,7 @@ class Dripper extends Model
             300000
         );
     }
-    
+
     public function getThresholdAttribute() : int
     {
         return config(
@@ -44,7 +44,7 @@ class Dripper extends Model
             10000
         );
     }
-    
+
     public function getCheckIntervalAttribute() : int
     {
         return config(
