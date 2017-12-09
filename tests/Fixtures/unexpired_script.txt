@@ -1,0 +1,30 @@
+<script>
+    let lastCheck = new Date();
+    const caffeineSendDrip = function () {
+        const ajax = window.XMLHttpRequest
+            ? new XMLHttpRequest
+            : new ActiveXObject('Microsoft.XMLHTTP');
+
+        ajax.onreadystatechange = function () {
+            if (ajax.readyState === 4 && ajax.status === 204) {
+                lastCheck = new Date();
+            }
+        };
+
+        ajax.open('GET', '/genealabs/laravel-caffeine/drip');
+        ajax.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+        ajax.send();
+    }
+
+    setInterval(function () {
+        caffeineSendDrip();
+    }, 300000);
+
+    if (2000 > 0) {
+        setInterval(function () {
+            if (new Date() - lastCheck >= 7082000) {
+                location.reload(true);
+            }
+        }, 2000);
+    }
+</script>

@@ -29,8 +29,7 @@ I chose this approach to keep the integrity of site-security, by avoiding the
 
 ## Considerations
 ### Routes
-This package adds the routes under `genealabs/laravel-caffeine`. Please verify
- that these don't collide with your existing routes.
+This package adds the routes under `genealabs/laravel-caffeine`.
 
 ### Dependencies
 - Your project must be running one of the following Laravel versions:
@@ -48,7 +47,6 @@ For Laravel 5.2, follow the directions here: https://github.com/GeneaLabs/larave
    composer require genealabs/laravel-caffeine
    ```
 
-
 2. **This is only required for Laravel 5.4 or below:**
    Add the service provider entry in `config/app.php`:
    ```php
@@ -57,7 +55,8 @@ For Laravel 5.2, follow the directions here: https://github.com/GeneaLabs/larave
    // ],
    ```
 
-3. If you have previously registered the middleware, please remove the following
+3. If you are running 5.5 or above, remove the providers entry from `config/app.php`.
+4. If you have previously registered the middleware, please remove the following
    middleware from `app/Http/Kernel.php`:
    ```php
    // protected $middleware = [
@@ -65,24 +64,84 @@ For Laravel 5.2, follow the directions here: https://github.com/GeneaLabs/larave
    // ];
    ```
 
+## Upgrad Notes
+### 0.6.0
+This update changes the config file setting names. Please delete the published
+config file `config/genealabs-laravel-caffeine.php` if it exists, and follow the
+configuration instructions below.
+
 ## Configuration
-The following elements are configurable:
-- **domain:** (default: `url('/')`) Change to point to a different domain than
- your app. This is useful if you are behind a proxy or load-balancer. ___Do not use
- the `url()` helper in the config file.___
-- **route:** (default: `genealabs/laravel-caffeine/drip`) Change to customize
- the drip URL in the browser. This is just cosmetic.
-- **dripIntervalInMilliSeconds:** (default: 5 mins) Change to configure the drip
- interval.
+```php
+return [
+    /*
+    |--------------------------------------------------------------------------
+    | Drip Interval
+    |--------------------------------------------------------------------------
+    |
+    | Here you may configure the interval with which Caffeine for Laravel
+    | keeps the session alive. By default this is 5 minutes (expressed
+    | in milliseconds). This needs to be shorter than your session
+    | lifetime value configured set in "config/session.php".
+    |
+    | Default: 300000 (int)
+    |
+    */
+    'dripInterval' => 300000,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Domain
+    |--------------------------------------------------------------------------
+    |
+    | You may optionally configure a separate domain that you are running
+    | Caffeine for Laravel on. This may be of interest if you have a
+    | monitoring service that queries other apps. Setting this to
+    | null will use the domain of the current application.
+    |
+    | Default: null (null|string)
+    |
+    */
+    'domain' => null,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Drip Endpoint URL
+    |--------------------------------------------------------------------------
+    |
+    | Sometimes you may wish to white-label your app and not expose the AJAX
+    | request URLs as belonging to this package. To achieve that you can
+    | rename the URL used for dripping caffeine into your application.
+    |
+    | Default: 'genealabs/laravel-caffeine/drip' (string)
+    |
+    */
+    'route' => 'genealabs/laravel-caffeine/drip', // Customizable end-point URL
+
+    /*
+    |--------------------------------------------------------------------------
+    | Checking for Lapsed Drips
+    |--------------------------------------------------------------------------
+    |
+    | If the browser is put to sleep on (for example on mobil devices or
+    | laptops), it will still cause an error when trying to submit the
+    | form. To avoid this, we force-reload the form 2 minutes prior
+    | to session time-out or later. Setting this setting to 0
+    | will disable this check if you don't want to use it.
+    |
+    | Default: 2000 (int)
+    |
+    */
+    'outdatedDripCheckInterval' => 2000,
+
+];
+```
 
 ___Only publish the config file if you need to customize it___:
 ```sh
-php artisan vendor:publish --tag=genealabs-laravel-caffeine
+php artisan caffeine:publish --config
 ```
 
-You can now change the default value in `config/genealabs-laravel-caffeine.php` as desired. Deleting the
-`config/genealabs-laravel-caffeine.php` file will revert back to the default settings.
-
 ## Usage
-That was it! It will apply itself automatically where it finds a form with a `_token` field, or a meta tag named
- "csrf-token", while pages are open in browsers.
+That was it! It will apply itself automatically where it finds a form with a
+`_token` field, or a meta tag named "csrf-token", while pages are open in
+browsers.

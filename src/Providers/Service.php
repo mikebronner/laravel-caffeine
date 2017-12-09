@@ -2,8 +2,9 @@
 
 use GeneaLabs\LaravelCaffeine\Console\Commands\Publish;
 use GeneaLabs\LaravelCaffeine\Http\Middleware\LaravelCaffeineDripMiddleware;
-use Illuminate\Support\ServiceProvider;
+use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Routing\Route;
+use Illuminate\Support\ServiceProvider;
 
 class Service extends ServiceProvider
 {
@@ -33,7 +34,9 @@ class Service extends ServiceProvider
         $this->commands(Publish::class);
         $this->mergeConfigFrom(__DIR__ . '/../../config/genealabs-laravel-caffeine.php', 'genealabs-laravel-caffeine');
 
-        app('Illuminate\Contracts\Http\Kernel')->pushMiddleware('\GeneaLabs\LaravelCaffeine\Http\Middleware\LaravelCaffeineDripMiddleware');
+        if ($this->shouldRegisterMiddleware()) {
+            app(Kernel::class)->pushMiddleware('\\' . LaravelCaffeineDripMiddleware::class);
+        }
     }
 
     public function provides() : array
@@ -57,5 +60,11 @@ class Service extends ServiceProvider
 
             return $carry;
         }) ?? false;
+    }
+
+    private function shouldRegisterMiddleware() : bool
+    {
+        return (! request()->ajax()
+            && (php_sapi_name() === 'fpm-fcgi' || app('env') === 'testing'));
     }
 }
