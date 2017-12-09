@@ -7,6 +7,24 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class DripperTest extends TestCase
 {
+    public function testAgeCheckIntervalAttributeValue()
+    {
+        $expectedResult = 2000;
+
+        $actualResult = (new Dripper)->ageCheckInterval;
+
+        $this->assertEquals($expectedResult, $actualResult);
+    }
+
+    public function testAgeThresholdAttributeValue()
+    {
+        $expectedResult = 7080000;
+
+        $actualResult = (new Dripper)->ageThreshold;
+
+        $this->assertEquals($expectedResult, $actualResult);
+    }
+
     public function testUrlAttributeValue()
     {
         $expectedResult = "/genealabs/laravel-caffeine/drip";
