@@ -11,11 +11,27 @@ class Dripper extends Model
 {
     public function getHtmlAttribute() : string
     {
-        return '<script>setInterval(function(){'
-            . "var e=window.XMLHttpRequest?new XMLHttpRequest:new ActiveXObject('Microsoft.XMLHTTP');"
-            . "e.open('GET','{$this->url}',!0);"
-            . "e.setRequestHeader('X-Requested-With','XMLHttpRequest');"
-            . "e.send();}, {$this->interval});</script>";
+        
+        return '<script>'
+            . "let caffeineLastDrip = new Date();"
+            . "function caffeineSendDrip () {"
+            . "    let e = window.XMLHttpRequest ? new XMLHttpRequest : new ActiveXObject('Microsoft.XMLHTTP');"
+            . "    e.onreadystatechange = function () {"
+            . "        if (e.readyState === 4 && e.status === 204) {"
+            . "            caffeineLastDrip = new Date();"
+            . "        }"
+            . "    };"
+            . "    e.open('GET', '{$this->url}', !0);"
+            . "    e.setRequestHeader('X-Requested-With', 'XMLHttpRequest');"
+            . "    e.send();"
+            . "}"
+            . "setInterval(caffeineSendDrip()), $this->interval);"
+            . "setInterval(function () {"
+            . "    if (new Date() - caffeineLastDrip >= $this->threshold ) {"
+            . "        location.reload(true);"
+            . "    }"
+            . "}, $this->checkInterval);"
+            . "</script>";
     }
 
     public function getIntervalAttribute() : string
@@ -23,6 +39,22 @@ class Dripper extends Model
         return config(
             'genealabs-laravel-caffeine.dripIntervalInMilliSeconds',
             300000
+        );
+    }
+    
+    public function getThreshold() : int
+    {
+        return config(
+            'genealabs-laravel-caffeine.thresholdDifference',
+            60000
+        );
+    }
+    
+    public function getCheckInterval : int
+    {
+        return config(
+            'genealabs-laravel-caffeine.checkLastDripInterval',
+            2000
         );
     }
 
