@@ -12,4 +12,9 @@ class Test extends Controller
 
         return view('genealabs-laravel-caffeine::tests.form');
     }
+
+    public function disabledPage() : View
+    {
+        return view('genealabs-laravel-caffeine::tests.disabled');
+    }
 }

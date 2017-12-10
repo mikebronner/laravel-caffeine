@@ -1,4 +1,8 @@
 # Change Log
+## [0.6.1] - 10 Dec 2017
+### Added
+- ability to exclude a page from caffinating the application via meta tag.
+
 ## [0.6.0] - 9 Dec 2017
 ### Added
 - drip timeout check and force page refresh if timeout occurred.

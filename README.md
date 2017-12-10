@@ -64,7 +64,7 @@ For Laravel 5.2, follow the directions here: https://github.com/GeneaLabs/larave
    // ];
    ```
 
-## Upgrad Notes
+## Upgrade Notes
 ### 0.6.0
 This update changes the config file setting names. Please delete the published
 config file `config/genealabs-laravel-caffeine.php` if it exists, and follow the
@@ -145,3 +145,13 @@ php artisan caffeine:publish --config
 That was it! It will apply itself automatically where it finds a form with a
 `_token` field, or a meta tag named "csrf-token", while pages are open in
 browsers.
+
+### Prevent Caffeination
+If you would like to prevent a certain page from caffeinating your application,
+then add the following meta tag:
+```php
+<meta name="caffeinated" content="false">
+```
+
+__This will only have effect if the page includes a form. If not, the page will
+not caffeinate your application anyway.__
