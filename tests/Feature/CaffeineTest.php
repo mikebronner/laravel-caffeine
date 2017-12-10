@@ -20,4 +20,37 @@ class CaffeineTest extends TestCase
 
         $response->assertSee($expectedResult);
     }
+
+    public function testSuccessfulDrip()
+    {
+        $dripRoute = config('genealabs-laravel-caffeine.route', 'genealabs/laravel-caffeine/drip');
+        $html = $this->get(route('genealabs-laravel-caffeine.tests.form'))
+            ->getContent();
+        $matches = [];
+        preg_match('/<meta name="csrf-token" content="(.*?)">/', $html, $matches);
+        $csrfToken = $matches[1];
+
+        $response = $this->get($dripRoute, [
+            '_token' => $csrfToken,
+        ]);
+
+        $response->assertStatus(204);
+    }
+
+    public function testExpiredDrip()
+    {
+        $dripRoute = config('genealabs-laravel-caffeine.dripInterval', 'genealabs/laravel-caffeine/drip');
+        $html = $this->get(route('genealabs-laravel-caffeine.tests.form'))
+            ->getContent();
+        $matches = [];
+        preg_match('/<meta name="csrf-token" content="(.*?)">/', $html, $matches);
+        $csrfToken = $matches[1];
+
+        app('session')->flush();
+        $response = $this->get($dripRoute, [
+            '_token' => $csrfToken,
+        ]);
+
+        $response->assertStatus(404);
+    }
 }
