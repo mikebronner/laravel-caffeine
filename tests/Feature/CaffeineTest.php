@@ -7,6 +7,7 @@ class CaffeineTest extends TestCase
     public function testBootstrap3TestPageCanLoad()
     {
         $dripRoute = config('genealabs-laravel-caffeine.route', 'genealabs/laravel-caffeine/drip');
+
         $response = $this->get($dripRoute);
 
         $response->assertStatus(204);
@@ -39,11 +40,18 @@ class CaffeineTest extends TestCase
 
     public function testExpiredDrip()
     {
-        $dripRoute = config('genealabs-laravel-caffeine.dripInterval', 'genealabs/laravel-caffeine/drip');
+        $dripRoute = config(
+            'genealabs-laravel-caffeine.dripInterval',
+            'genealabs/laravel-caffeine/drip'
+        );
         $html = $this->get(route('genealabs-laravel-caffeine.tests.form'))
             ->getContent();
         $matches = [];
-        preg_match('/<meta name="csrf-token" content="(.*?)">/', $html, $matches);
+        preg_match(
+            '/<meta name="csrf-token" content="(.*?)">/',
+            $html,
+            $matches
+        );
         $csrfToken = $matches[1];
 
         app('session')->flush();
@@ -52,5 +60,24 @@ class CaffeineTest extends TestCase
         ]);
 
         $response->assertStatus(404);
+    }
+
+    public function testDisabledCaffeination()
+    {
+        $html = $this
+            ->get(route('genealabs-laravel-caffeine.tests.disabled-page'))
+            ->getContent();
+
+        $isDisabled = (bool) preg_match(
+            '/<meta name="caffeinated" content="false">/',
+            $html
+        );
+        $hasDripper = (bool) preg_match(
+            '/\bconst caffeineSendDrip\b/',
+            $html
+        );
+
+        $this->assertTrue($isDisabled);
+        $this->assertFalse($hasDripper);
     }
 }
