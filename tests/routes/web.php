@@ -15,4 +15,7 @@ Route::group([
         ->name('tests.disabled-page');
     Route::any('null-response', Test::class . '@nullResponse')
         ->name('tests.null-response');
+    Route::any('route-middleware', Test::class . '@drippedForm')
+        ->name('tests.route-middleware')
+        ->middleware('caffeinated');
 });

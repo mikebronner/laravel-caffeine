@@ -18,6 +18,6 @@ class PublishTest extends TestCase
         $this->assertContains("'dripInterval' => 300000,", $settings);
         $this->assertContains("'domain' => null,", $settings);
         $this->assertContains("'route' => 'genealabs/laravel-caffeine/drip',", $settings);
-        $this->assertContains("'outdatedDripCheckInterval' => 2000,", $settings);
+        $this->assertContains("'outdated-drip-check-interval' => 2000,", $settings);
     }
 }

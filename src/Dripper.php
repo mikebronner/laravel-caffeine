@@ -19,7 +19,7 @@ class Dripper extends Model
     public function getAgeCheckIntervalAttribute() : int
     {
         return config(
-            'genealabs-laravel-caffeine.outdatedDripCheckInterval',
+            'genealabs-laravel-caffeine.outdated-drip-check-interval',
             2000
         );
     }

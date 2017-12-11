@@ -59,6 +59,18 @@ return [
     | Default: 2000 (int)
     |
     */
-    'outdatedDripCheckInterval' => 2000,
+    'outdated-drip-check-interval' => 2000,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Use Route Middleware
+    |--------------------------------------------------------------------------
+    |
+    | Drips are enabled via route middleware instead of global middleware.
+    |
+    | Default: false (bool)
+    |
+    */
+    'use-route-middleware' => false,
 
 ];
