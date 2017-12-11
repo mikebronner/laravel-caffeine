@@ -16,6 +16,10 @@ class Service extends ServiceProvider
             ? ['middleware' => 'web']
             : [], function () {
                 require __DIR__ . '/../../routes/web.php';
+
+                if (app('env') === 'testing') {
+                    require __DIR__ . '/../../tests/routes/web.php';
+                }
             });
 
         $configPath = __DIR__ . '/../../config/genealabs-laravel-caffeine.php';
@@ -24,6 +28,14 @@ class Service extends ServiceProvider
             __DIR__ . '/../../resources/views',
             'genealabs-laravel-caffeine'
         );
+
+        if (app('env') === 'testing') {
+            $this->loadViewsFrom(
+                __DIR__ . '/../../tests/resources/views',
+                'genealabs-laravel-caffeine'
+            );
+        }
+
         $this->publishes([
             $configPath => config_path('genealabs-laravel-caffeine.php')
         ], 'config');
@@ -44,7 +56,7 @@ class Service extends ServiceProvider
         return ['genealabs-laravel-caffeine'];
     }
 
-    private function middlewareGroupExists(string $group) : bool
+    protected function middlewareGroupExists(string $group) : bool
     {
         $routes = collect(app('router')->getRoutes()->getRoutes());
 
@@ -62,7 +74,7 @@ class Service extends ServiceProvider
         }) ?? false;
     }
 
-    private function shouldRegisterMiddleware() : bool
+    protected function shouldRegisterMiddleware() : bool
     {
         return (! request()->ajax()
             && (php_sapi_name() === 'fpm-fcgi' || app('env') === 'testing'));
