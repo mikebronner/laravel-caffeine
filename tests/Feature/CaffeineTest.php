@@ -81,7 +81,7 @@ class CaffeineTest extends TestCase
         $this->assertFalse($hasDripper);
     }
 
-    public function textNonStringReturnContent()
+    public function testNonStringReturnContent()
     {
         $response = $this->get(route('genealabs-laravel-caffeine.tests.null-response'));
 

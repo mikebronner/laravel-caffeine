@@ -12,7 +12,7 @@ class LaravelCaffeineDripMiddleware
 
         $content = $response->getContent();
 
-        if (! is_string($content)) {
+        if (! is_string($content) || strlen(trim($content)) === 0) {
             return $response;
         }
 
