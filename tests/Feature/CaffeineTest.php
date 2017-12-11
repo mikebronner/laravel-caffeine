@@ -80,4 +80,11 @@ class CaffeineTest extends TestCase
         $this->assertTrue($isDisabled);
         $this->assertFalse($hasDripper);
     }
+
+    public function textNonStringReturnContent()
+    {
+        $response = $this->get(route('genealabs-laravel-caffeine.tests.null-response'));
+
+        $response->assertDontSee('const caffeineSendDrip');
+    }
 }

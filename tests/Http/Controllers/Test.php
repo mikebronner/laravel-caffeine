@@ -1,4 +1,4 @@
-<?php namespace GeneaLabs\LaravelCaffeine\Http\Controllers;
+<?php namespace GeneaLabs\LaravelCaffeine\Tests\Http\Controllers;
 
 use Illuminate\Routing\Controller;
 use Illuminate\View\View;
@@ -16,5 +16,10 @@ class Test extends Controller
     public function disabledPage() : View
     {
         return view('genealabs-laravel-caffeine::tests.disabled');
+    }
+
+    public function nullResponse()
+    {
+        return null;
     }
 }
