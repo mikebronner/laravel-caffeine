@@ -18,6 +18,8 @@ trait CreatesApplication
     protected function loadRoutes()
     {
         $routes = file_get_contents(__DIR__ . '/../routes/web.php');
+        $routes .= str_replace('<?php', '', file_get_contents(__DIR__ . '/../tests/routes/web.php'));
+
         file_put_contents(__DIR__ . '/../vendor/laravel/laravel/routes/web.php', $routes);
     }
 }

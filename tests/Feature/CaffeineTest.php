@@ -4,7 +4,7 @@ use GeneaLabs\LaravelCaffeine\Tests\TestCase;
 
 class CaffeineTest extends TestCase
 {
-    public function testBootstrap3TestPageCanLoad()
+    public function testDripEndpoint()
     {
         $dripRoute = config('genealabs-laravel-caffeine.route', 'genealabs/laravel-caffeine/drip');
 
