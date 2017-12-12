@@ -42,7 +42,7 @@ class CaffeineTest extends TestCase
     public function testExpiredDrip()
     {
         $dripRoute = config(
-            'genealabs-laravel-caffeine.dripInterval',
+            'genealabs-laravel-caffeine.drip-interval',
             'genealabs/laravel-caffeine/drip'
         );
         $html = $this->get(route('genealabs-laravel-caffeine.tests.form'))

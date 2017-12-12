@@ -32,7 +32,7 @@ class Dripper extends Model
     public function getIntervalAttribute() : string
     {
         return config(
-            'genealabs-laravel-caffeine.dripInterval',
+            'genealabs-laravel-caffeine.drip-interval',
             300000
         );
     }
