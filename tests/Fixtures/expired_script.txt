@@ -18,7 +18,7 @@
 
     setInterval(function () {
         caffeineSendDrip();
-    }, 300000);
+    }, 50000);
 
     if (2000 > 0) {
         setInterval(function () {
