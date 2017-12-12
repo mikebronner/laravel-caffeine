@@ -6,6 +6,10 @@
 ### Changed
 - config variable to `outdated-drip-check-interval`.
 
+### Fixed
+- naming of config setting `drip-interval`.
+- formatting of script fixture.
+
 ## [0.6.1] - 10 Dec 2017
 ### Added
 - ability to exclude a page from caffinating the application via meta tag.
