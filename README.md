@@ -131,7 +131,19 @@ return [
     | Default: 2000 (int)
     |
     */
-    'outdatedDripCheckInterval' => 2000,
+    'outdated-drip-check-interval' => 2000,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Use Route Middleware
+    |--------------------------------------------------------------------------
+    |
+    | Drips are enabled via route middleware instead of global middleware.
+    |
+    | Default: false (bool)
+    |
+    */
+    'use-route-middleware' => false,
 
 ];
 ```
@@ -147,11 +159,37 @@ That was it! It will apply itself automatically where it finds a form with a
 browsers.
 
 ### Prevent Caffeination
+There are two methods to prevent Caffeine for Laravel from dripping to keep the
+session alive: disabling it in Blade using the meta tag method, or enabling
+route-middleware mode, and then only enabling it on routes or route groups.
+
+#### Meta Tag Method
 If you would like to prevent a certain page from caffeinating your application,
 then add the following meta tag:
 ```php
 <meta name="caffeinated" content="false">
 ```
+
+#### Route Middleware Method
+To enable this mode, you need to publish the configuration file (see the
+configuration section above) and then set `use-route-middleware` to `true`. This
+will disable the default global middleware mode (which applies it to any page
+that has the CSRF token in it across your entire application). Now you need to
+selectively enable Caffeine on a given route or route group using route
+middleware:
+
+```php
+Route::any('test', 'TestController@test')->middleware('caffeinate');
+
+Route::group(['middleware' => ['caffeinate']], function () {
+    Route::any('test', 'TestController@test');
+})
+```
+
+You can still use the route middleware method and apply it globally to all
+routes by editing `app/Http/Kernel.php` and adding it to the `web` middleware
+group. Although you should only use this option if you have a very specific use-
+case that prevents you from utilizing the default global middleware option.
 
 __This will only have effect if the page includes a form. If not, the page will
 not caffeinate your application anyway.__

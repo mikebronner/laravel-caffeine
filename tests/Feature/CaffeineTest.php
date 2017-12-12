@@ -1,5 +1,6 @@
 <?php namespace GeneaLabs\LaravelCaffeine\Tests\Feature;
 
+use GeneaLabs\LaravelCaffeine\Http\Middleware\LaravelCaffeineDripMiddleware;
 use GeneaLabs\LaravelCaffeine\Tests\TestCase;
 
 class CaffeineTest extends TestCase
@@ -86,5 +87,18 @@ class CaffeineTest extends TestCase
         $response = $this->get(route('genealabs-laravel-caffeine.tests.null-response'));
 
         $response->assertDontSee('const caffeineSendDrip');
+    }
+
+    public function testRouteMiddleware()
+    {
+        app('router')->aliasMiddleware(
+            'caffeinated',
+            '\\' . LaravelCaffeineDripMiddleware::class
+        );
+
+        $response = $this
+            ->get(route('genealabs-laravel-caffeine.tests.route-middleware'));
+
+        $response->assertSee('const caffeineSendDrip');
     }
 }

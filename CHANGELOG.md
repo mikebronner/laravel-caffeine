@@ -1,4 +1,11 @@
 # Change Log
+## [0.6.2] - 11 Dec 2017
+### Added
+- route middleware functionality.
+
+### Changed
+- config variable to `outdated-drip-check-interval`.
+
 ## [0.6.1] - 10 Dec 2017
 ### Added
 - ability to exclude a page from caffinating the application via meta tag.

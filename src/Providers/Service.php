@@ -46,8 +46,15 @@ class Service extends ServiceProvider
         $this->commands(Publish::class);
         $this->mergeConfigFrom(__DIR__ . '/../../config/genealabs-laravel-caffeine.php', 'genealabs-laravel-caffeine');
 
-        if ($this->shouldRegisterMiddleware()) {
+        if ($this->shouldRegisterGlobalMiddleware()) {
             app(Kernel::class)->pushMiddleware('\\' . LaravelCaffeineDripMiddleware::class);
+        }
+
+        if ($this->shouldRegisterRouteMiddleware()) {
+            app('router')->aliasMiddleware(
+                'caffeinated',
+                '\\' . LaravelCaffeineDripMiddleware::class
+            );
         }
     }
 
@@ -74,9 +81,15 @@ class Service extends ServiceProvider
         }) ?? false;
     }
 
-    protected function shouldRegisterMiddleware() : bool
+    protected function shouldRegisterGlobalMiddleware() : bool
     {
         return (! request()->ajax()
+            && ! $this->shouldRegisterRouteMiddleware()
             && (php_sapi_name() === 'fpm-fcgi' || app('env') === 'testing'));
+    }
+
+    protected function shouldRegisterRouteMiddleware() : bool
+    {
+        return (bool) config('genealabs-laravel-caffeine.use-route-middleware');
     }
 }
