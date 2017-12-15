@@ -85,7 +85,9 @@ class Service extends ServiceProvider
     {
         return (! request()->ajax()
             && ! $this->shouldRegisterRouteMiddleware()
-            && (php_sapi_name() === 'fpm-fcgi' || app('env') === 'testing'));
+            && (php_sapi_name() === 'fpm-fcgi'
+                || php_sapi_name() === 'apache2handler'
+                || app('env') === 'testing'));
     }
 
     protected function shouldRegisterRouteMiddleware() : bool
