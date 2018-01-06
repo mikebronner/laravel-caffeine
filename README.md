@@ -193,3 +193,36 @@ case that prevents you from utilizing the default global middleware option.
 
 __This will only have effect if the page includes a form. If not, the page will
 not caffeinate your application anyway.__
+
+## Commitment to Quality
+During package development I try as best as possible to embrace good design and
+development practices to try to ensure that this package is as good as it can
+be. My checklist for package development includes:
+
+-   ✅ Achieve as close to 100% code coverage as possible using unit tests.
+-   ✅ Eliminate any issues identified by SensioLabs Insight and Scrutinizer.
+-   ✅ Be fully PSR1, PSR2, and PSR4 compliant.
+-   ✅ Include comprehensive documentation in README.md.
+-   ✅ Provide an up-to-date CHANGELOG.md which adheres to the format outlined
+    at <http://keepachangelog.com>.
+-   ✅ Have no PHPMD or PHPCS warnings throughout all code.
+
+## Contributing
+Please observe and respect all aspects of the included Code of Conduct
+<https://github.com/GeneaLabs/laravel-caffeine/blob/master/CODE_OF_CONDUCT.md>.
+
+### Reporting Issues
+When reporting issues, please fill out the included template as completely as
+possible. Incomplete issues may be ignored or closed if there is not enough
+information included to be actionable.
+
+### Submitting Pull Requests
+Please review the Contribution Guidelines <https://github.com/GeneaLabs/laravel-caffeine/blob/master/CONTRIBUTING.md>.
+Only PRs that meet all criterium will be accepted.
+
+## Support Open-Source Software - Give Thanks!
+We have included the awesome `symfony/thanks` composer package as a dev
+dependency. Let your OS package maintainers know you appreciate them by starring
+the packages you use. Simply run `composer thanks` after installing this
+package. (And not to worry, since it's a dev-dependency it won't be installed in
+your live environment.)
