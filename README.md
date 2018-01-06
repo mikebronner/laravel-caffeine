@@ -193,6 +193,7 @@ case that prevents you from utilizing the default global middleware option.
 __This will only have effect if the page includes a form. If not, the page will
 not caffeinate your application anyway.__
 
+# The Fine Print
 ## Commitment to Quality
 During package development I try as best as possible to embrace good design and
 development practices to try to ensure that this package is as good as it can
