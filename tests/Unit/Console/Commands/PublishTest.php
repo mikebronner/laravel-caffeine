@@ -6,7 +6,7 @@ class PublishTest extends TestCase
 {
     public function testConfigFileGetsPublished()
     {
-        app('artisan')::getFacadeRoot()->call('caffeine:publish', ['--config' => true]);
+        app('Illuminate\Contracts\Console\Kernel')->call('caffeine:publish', ['--config' => true]);
 
         $this->assertFileExists(base_path('config/genealabs-laravel-caffeine.php'));
     }
