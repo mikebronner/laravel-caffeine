@@ -9,16 +9,19 @@
         }
     ],
     "require": {
-        "php": ">=7.0.0",
-        "illuminate/support": "5.5.*",
         "illuminate/routing": "5.5.*",
-        "jenssegers/model": "*"
+        "illuminate/support": "5.5.*",
+        "jenssegers/model": "*",
+        "php": ">=7.0.0"
     },
     "require-dev": {
-        "laravel/laravel": "5.5.*",
+        "codedungeon/phpunit-result-printer": "^0.5.0",
         "mockery/mockery": "0.9.*",
+        "orchestra/testbench-browser-kit": "^3.5",
+        "orchestra/testbench-dusk": "^3.5",
+        "orchestra/testbench": "^3.5",
         "phpmd/phpmd": "^2.6",
-        "phpunit/phpunit": "5.7.*",
+        "phpunit/phpunit": "*",
         "satooshi/php-coveralls" : "*",
         "sebastian/phpcpd": "*"
     },

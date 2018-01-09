@@ -1,12 +1,12 @@
 <?php namespace GeneaLabs\LaravelCaffeine\Tests\Unit\Console\Commands;
 
-use GeneaLabs\LaravelCaffeine\Tests\TestCase;
+use GeneaLabs\LaravelCaffeine\Tests\UnitTestCase;
 
-class PublishTest extends TestCase
+class PublishTest extends UnitTestCase
 {
     public function testConfigFileGetsPublished()
     {
-        app('artisan')::getFacadeRoot()->call('caffeine:publish', ['--config' => true]);
+        $this->artisan('caffeine:publish', ['--config' => true]);
 
         $this->assertFileExists(base_path('config/genealabs-laravel-caffeine.php'));
     }

@@ -2,10 +2,10 @@
 
 use Exception;
 use GeneaLabs\LaravelCaffeine\Providers\Service;
-use GeneaLabs\LaravelCaffeine\Tests\TestCase;
+use GeneaLabs\LaravelCaffeine\Tests\UnitTestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class ServiceTest extends TestCase
+class ServiceTest extends UnitTestCase
 {
     public function testServiceProviderHint()
     {
