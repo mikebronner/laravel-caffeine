@@ -1,4 +1,4 @@
-<?php namespace GeneaLabs\LaravelCaffeine\Tests\Feature;
+<?php namespace GeneaLabs\LaravelCaffeine\Tests\Browser;
 
 use GeneaLabs\LaravelCaffeine\Tests\BrowserTestCase;
 use Laravel\Dusk\Browser;
@@ -9,8 +9,8 @@ class DripTest extends BrowserTestCase
     {
         $this->browse(function (Browser $browser) {
             $response = $browser->visit('hello');
-                // ->assertSee('hello world');
-            dd($response->dump());
+            $response->dump();
+            // $response->assertSee('Test Form');
         });
     }
 }
