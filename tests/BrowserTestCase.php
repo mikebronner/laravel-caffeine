@@ -1,8 +1,8 @@
 <?php namespace GeneaLabs\LaravelCaffeine\Tests;
 
-use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
+use Orchestra\Testbench\Dusk\TestCase as BaseTestCase;
 
-abstract class BrowserCase extends BaseTestCase
+abstract class BrowserTestCase extends BaseTestCase
 {
     use CreatesApplication;
 }
