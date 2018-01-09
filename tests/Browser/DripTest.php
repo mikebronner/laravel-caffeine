@@ -8,9 +8,8 @@ class DripTest extends BrowserTestCase
     public function testFormDoesntExpire()
     {
         $this->browse(function (Browser $browser) {
-            $response = $browser->visit('hello');
-            $response->dump();
-            // $response->assertSee('Test Form');
+            $response = $browser->visit('tests/form');
+            $response->assertSee('Test Form');
         });
     }
 }
