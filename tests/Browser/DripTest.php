@@ -9,8 +9,8 @@ class DripTest extends BrowserTestCase
     {
         $this->browse(function (Browser $browser) {
             $response = $browser->visit('hello');
-            $response->dump();
-            // $response->assertSee('Test Form');
+            // $response->dump();
+            $response->assertSee('Test Form');
         });
     }
 }
