@@ -44,7 +44,7 @@ class CaffeineTest extends FeatureTestCase
     public function testExpiredDrip()
     {
         $dripRoute = config(
-            'genealabs-laravel-caffeine.dripInterval',
+            'genealabs-laravel-caffeine.drip-interval',
             'genealabs/laravel-caffeine/drip'
         );
         $html = $this
