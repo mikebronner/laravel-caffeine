@@ -1,4 +1,9 @@
+dist: trusty
 language: php
+sudo: required
+
+addons:
+    chrome: stable
 
 php:
     - 7.0
@@ -7,7 +12,8 @@ php:
 
 before_script:
     - travis_retry composer self-update
-    - travis_retry composer install --no-interaction --prefer-source --dev
+    - travis_retry composer install --no-interaction --dev --prefer-dist --no-suggest
+    - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
 
 script:
   - ./vendor/bin/phpunit --coverage-text --coverage-clover ./build/logs/clover.xml
