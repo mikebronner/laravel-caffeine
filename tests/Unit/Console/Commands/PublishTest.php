@@ -1,12 +1,12 @@
 <?php namespace GeneaLabs\LaravelCaffeine\Tests\Unit\Console\Commands;
 
-use GeneaLabs\LaravelCaffeine\Tests\TestCase;
+use GeneaLabs\LaravelCaffeine\Tests\UnitTestCase;
 
-class PublishTest extends TestCase
+class PublishTest extends UnitTestCase
 {
     public function testConfigFileGetsPublished()
     {
-        app('Illuminate\Contracts\Console\Kernel')->call('caffeine:publish', ['--config' => true]);
+        $this->artisan('caffeine:publish', ['--config' => true]);
 
         $this->assertFileExists(base_path('config/genealabs-laravel-caffeine.php'));
     }
@@ -19,6 +19,5 @@ class PublishTest extends TestCase
         $this->assertContains("'domain' => null,", $settings);
         $this->assertContains("'route' => 'genealabs/laravel-caffeine/drip',", $settings);
         $this->assertContains("'outdated-drip-check-interval' => 2000,", $settings);
-        $this->assertContains("'use-route-middleware' => false,", $settings);
     }
 }

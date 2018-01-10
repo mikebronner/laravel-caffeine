@@ -8,8 +8,6 @@ use Illuminate\Support\ServiceProvider;
 
 class Service extends ServiceProvider
 {
-    protected $defer = false;
-
     public function boot()
     {
         app('router')->group($this->middlewareGroupExists('web')
@@ -39,10 +37,7 @@ class Service extends ServiceProvider
         $this->publishes([
             $configPath => config_path('genealabs-laravel-caffeine.php')
         ], 'config');
-    }
 
-    public function register()
-    {
         $this->commands(Publish::class);
         $this->mergeConfigFrom(__DIR__ . '/../../config/genealabs-laravel-caffeine.php', 'genealabs-laravel-caffeine');
 
@@ -56,11 +51,6 @@ class Service extends ServiceProvider
                 '\\' . LaravelCaffeineDripMiddleware::class
             );
         }
-    }
-
-    public function provides() : array
-    {
-        return ['genealabs-laravel-caffeine'];
     }
 
     protected function middlewareGroupExists(string $group) : bool
