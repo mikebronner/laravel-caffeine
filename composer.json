@@ -9,8 +9,8 @@
         }
     ],
     "require": {
-        "illuminate/routing": "5.5.*",
-        "illuminate/support": "5.5.*",
+        "illuminate/routing": "5.5.* || 5.6.*",
+        "illuminate/support": "5.5.* || 5.6.*",
         "jenssegers/model": "*",
         "php": ">=7.0.0"
     },
