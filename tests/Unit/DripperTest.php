@@ -2,10 +2,10 @@
 
 use Exception;
 use GeneaLabs\LaravelCaffeine\Dripper;
-use GeneaLabs\LaravelCaffeine\Tests\TestCase;
+use GeneaLabs\LaravelCaffeine\Tests\UnitTestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class DripperTest extends TestCase
+class DripperTest extends UnitTestCase
 {
     public function testAgeCheckIntervalAttributeValue()
     {
