@@ -9,17 +9,17 @@
         }
     ],
     "require": {
-        "illuminate/routing": "5.5.*",
-        "illuminate/support": "5.5.*",
+        "illuminate/routing": "5.6.*",
+        "illuminate/support": "5.6.*",
         "jenssegers/model": "*",
         "php": ">=7.0.0"
     },
     "require-dev": {
-        "codedungeon/phpunit-result-printer": "^0.5.0",
+        "codedungeon/phpunit-result-printer": "*",
         "mockery/mockery": "0.9.*",
-        "orchestra/testbench-browser-kit": "^3.5",
-        "orchestra/testbench-dusk": "^3.5",
-        "orchestra/testbench": "^3.5",
+        "orchestra/testbench-browser-kit": "3.6.x-dev@dev",
+        "orchestra/testbench-dusk": "3.6.x-dev@dev",
+        "orchestra/testbench": "^3.6",
         "phpmd/phpmd": "^2.6",
         "phpunit/phpunit": "*",
         "satooshi/php-coveralls" : "*",
