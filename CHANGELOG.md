@@ -1,6 +1,14 @@
 # Change Log
 ## [0.6.5] - 5 Jan 2018
 ### Added
+- Laravel 5.6 compatibility.
+
+## [0.6.6] - 9 Feb 2018
+### Changed
+- tests to use `orchestral/testbench` suite.
+
+## [0.6.5] - 5 Jan 2018
+### Added
 - `thanks` package.
 
 ### Updated
