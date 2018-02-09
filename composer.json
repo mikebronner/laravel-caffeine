@@ -12,7 +12,7 @@
         "illuminate/routing": "5.6.*",
         "illuminate/support": "5.6.*",
         "jenssegers/model": "*",
-        "php": ">=7.0.0"
+        "php": ">=7.0.25"
     },
     "require-dev": {
         "codedungeon/phpunit-result-printer": "*",
