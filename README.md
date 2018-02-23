@@ -179,9 +179,9 @@ selectively enable Caffeine on a given route or route group using route
 middleware:
 
 ```php
-Route::any('test', 'TestController@test')->middleware('caffeinate');
+Route::any('test', 'TestController@test')->middleware('caffeinated');
 
-Route::group(['middleware' => ['caffeinate']], function () {
+Route::group(['middleware' => ['caffeinated']], function () {
     Route::any('test', 'TestController@test');
 })
 ```
