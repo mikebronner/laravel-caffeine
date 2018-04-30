@@ -51,7 +51,7 @@ For Laravel 5.2, follow the directions here: https://github.com/GeneaLabs/larave
    Add the service provider entry in `config/app.php`:
    ```php
    // 'providers' => [
-       GeneaLabs\LaravelCaffeine\Providers\LaravelCaffeineService::class,
+       GeneaLabs\LaravelCaffeine\Providers\Service::class,
    // ],
    ```
 
