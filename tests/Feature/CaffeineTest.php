@@ -79,7 +79,7 @@ class CaffeineTest extends FeatureTestCase
             $html
         );
         $hasDripper = (bool) preg_match(
-            '/\bconst caffeineSendDrip\b/',
+            '/\bvar caffeineSendDrip\b/',
             $html
         );
 
@@ -91,7 +91,7 @@ class CaffeineTest extends FeatureTestCase
     {
         $response = $this->get(route('genealabs-laravel-caffeine.tests.null-response'));
 
-        $response->dontSee('const caffeineSendDrip');
+        $response->dontSee('var caffeineSendDrip');
     }
 
     public function testRouteMiddleware()
@@ -104,6 +104,6 @@ class CaffeineTest extends FeatureTestCase
         $response = $this
             ->get(route('genealabs-laravel-caffeine.tests.route-middleware'));
 
-        $response->see('const caffeineSendDrip');
+        $response->see('var caffeineSendDrip');
     }
 }

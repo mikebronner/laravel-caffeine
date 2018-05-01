@@ -1,7 +1,7 @@
 <script>
-    let lastCheck = new Date();
-    const caffeineSendDrip = function () {
-        const ajax = window.XMLHttpRequest
+    var lastCheck = new Date();
+    var caffeineSendDrip = function () {
+        var ajax = window.XMLHttpRequest
             ? new XMLHttpRequest
             : new ActiveXObject('Microsoft.XMLHTTP');
 
