@@ -51,7 +51,7 @@ For Laravel 5.2, follow the directions here: https://github.com/GeneaLabs/larave
    Add the service provider entry in `config/app.php`:
    ```php
    // 'providers' => [
-       GeneaLabs\LaravelCaffeine\Providers\LaravelCaffeineService::class,
+       GeneaLabs\LaravelCaffeine\Providers\Service::class,
    // ],
    ```
 
@@ -179,9 +179,9 @@ selectively enable Caffeine on a given route or route group using route
 middleware:
 
 ```php
-Route::any('test', 'TestController@test')->middleware('caffeinate');
+Route::any('test', 'TestController@test')->middleware('caffeinated');
 
-Route::group(['middleware' => ['caffeinate']], function () {
+Route::group(['middleware' => ['caffeinated']], function () {
     Route::any('test', 'TestController@test');
 })
 ```
