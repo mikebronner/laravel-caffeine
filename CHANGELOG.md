@@ -2,6 +2,7 @@
 ## [0.6.11] - 13 May 2018
 ### Fixed
 - regexp to be simpler. Thanks @juandi, #92.
+- `app_env` (to `internaltesting`) to avoid testing conflicts. Thanks @agjino, #82.
 
 ## [0.6.10] - 13 May 2018
 ### Fixed

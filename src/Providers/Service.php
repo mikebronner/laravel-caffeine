@@ -15,7 +15,7 @@ class Service extends ServiceProvider
             : [], function () {
                 require __DIR__ . '/../../routes/web.php';
 
-                if (app('env') === 'testing') {
+                if (config("app.env") === 'internaltesting') {
                     require __DIR__ . '/../../tests/routes/web.php';
                 }
             });
@@ -27,7 +27,7 @@ class Service extends ServiceProvider
             'genealabs-laravel-caffeine'
         );
 
-        if (app('env') === 'testing') {
+        if (config("app.env") === 'internaltesting') {
             $this->loadViewsFrom(
                 __DIR__ . '/../../tests/resources/views',
                 'genealabs-laravel-caffeine'
@@ -77,7 +77,7 @@ class Service extends ServiceProvider
             && ! $this->shouldRegisterRouteMiddleware()
             && (php_sapi_name() === 'fpm-fcgi'
                 || php_sapi_name() === 'apache2handler'
-                || app('env') === 'testing'));
+                || config("app.env") === 'internaltesting'));
     }
 
     protected function shouldRegisterRouteMiddleware() : bool
