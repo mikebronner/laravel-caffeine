@@ -1,4 +1,8 @@
 # Change Log
+## [0.6.11] - 13 May 2018
+### Fixed
+- regexp to be simpler. Thanks @juandi, #92.
+
 ## [0.6.10] - 13 May 2018
 ### Fixed
 - erroneous `const` in JavaScript, changed to `var`. Thanks @netpok, #86.
