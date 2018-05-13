@@ -1,4 +1,8 @@
 # Change Log
+## [0.6.10] - 13 May 2018
+### Fixed
+- erroneous `const` in JavaScript, changed to `var`. Thanks @netpok, #86.
+
 ## [0.6.9] - 13 May 2018
 ### Fixed
 - erroneous `let` in JavaScript, changed to `var`. Thanks @spaceemotion, #94.
