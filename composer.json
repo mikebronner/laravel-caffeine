@@ -17,7 +17,7 @@
     "require-dev": {
         "codedungeon/phpunit-result-printer": "*",
         "mockery/mockery": "0.9.*",
-        "orchestra/testbench-browser-kit": "3.6.x-dev@dev",
+        "orchestra/testbench-browser-kit": "^3.6",
         "orchestra/testbench-dusk": "3.6.x-dev@dev",
         "orchestra/testbench": "^3.6",
         "phpmd/phpmd": "^2.6",
@@ -27,7 +27,11 @@
     },
     "autoload": {
         "psr-4": {
-            "GeneaLabs\\LaravelCaffeine\\": "src/",
+            "GeneaLabs\\LaravelCaffeine\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
             "GeneaLabs\\LaravelCaffeine\\Tests\\": "tests/"
         }
     },

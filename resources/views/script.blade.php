@@ -1,5 +1,5 @@
 <script>
-    let lastCheck = new Date();
+    var lastCheck = new Date();
     const caffeineSendDrip = function () {
         const ajax = window.XMLHttpRequest
             ? new XMLHttpRequest

@@ -1,4 +1,20 @@
 # Change Log
+## [0.6.9] - 13 May 2018
+### Fixed
+- erroneous `let` in JavaScript, changed to `var`. Thanks @spaceemotion, #94.
+
+## [0.6.8] - 15 Feb 2018
+### Fixed
+- dependency versions to allow installation on earlier versions of Laravel.
+
+## [0.6.7] - 9 Feb 2018
+### Added
+- Laravel 5.6 compatibility.
+
+## [0.6.6] - 9 Jan 2018
+### Changed
+- testing to use orchestral/testbench suite.
+
 ## [0.6.5] - 5 Jan 2018
 ### Added
 - Laravel 5.6 compatibility.
