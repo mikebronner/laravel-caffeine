@@ -10,7 +10,7 @@ class Test extends Controller
         config()->set('session.lifetime', 1);
         config()->set('genealabs-laravel-caffeine.drip-interval', 50000);
 
-        return view('genealabs-laravel-caffeine::tests.form');
+        return view('genealabs-laravel-caffeine::tests.form')->with('foo');
     }
 
     public function disabledPage() : View
