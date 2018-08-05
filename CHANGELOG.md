@@ -1,4 +1,8 @@
 # Change Log
+## [0.6.12] - 5 Aug 2018
+### Fixed
+- middleware response to be a view instead of string. Thanks @dallincoons, #96 #95.
+
 ## [0.6.11] - 13 May 2018
 ### Fixed
 - regexp to be simpler. Thanks @juandi, #92.

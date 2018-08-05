@@ -47,7 +47,9 @@ class LaravelCaffeineDripMiddleware
             "{$dripper->html}</body>",
             $content
         );
+        $original = $response->original;
         $response->setContent($content);
+        $response->original = $original;
 
         return $response;
     }
