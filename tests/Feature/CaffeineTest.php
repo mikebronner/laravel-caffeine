@@ -21,6 +21,7 @@ class CaffeineTest extends FeatureTestCase
         $response = $this->get(route('genealabs-laravel-caffeine.tests.form'));
 
         $response->see($expectedResult);
+        $response->assertViewHas('foo');
     }
 
     public function testSuccessfulDrip()
