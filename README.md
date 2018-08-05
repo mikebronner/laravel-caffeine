@@ -8,7 +8,7 @@
 [![GitHub (pre-)release](https://img.shields.io/github/release/GeneaLabs/laravel-caffeine/all.svg)](https://github.com/GeneaLabs/laravel-caffeine)
 [![Packagist](https://img.shields.io/packagist/dt/GeneaLabs/laravel-caffeine.svg)](https://packagist.org/packages/genealabs/laravel-caffeine)
 
-## Goal
+## Goal 
 Prevent forms from timing out when submitting them after leaving them on-screen
  for a considerable amount of time. (Laravel defaults to 120 minutes, but that
  is configurable and could be different site-by-site.)
