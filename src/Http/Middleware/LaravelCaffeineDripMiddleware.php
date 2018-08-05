@@ -2,7 +2,6 @@
 
 use Closure;
 use GeneaLabs\LaravelCaffeine\Dripper;
-use GeneaLabs\LaravelCaffeine\Http\Response;
 use Illuminate\Http\Request;
 
 class LaravelCaffeineDripMiddleware
@@ -48,8 +47,9 @@ class LaravelCaffeineDripMiddleware
             "{$dripper->html}</body>",
             $content
         );
-
-        $this->setContents($response, $content);
+        $original = $response->original;
+        $response->setContent($content);
+        $response->original = $original;
 
         return $response;
     }
@@ -57,18 +57,5 @@ class LaravelCaffeineDripMiddleware
     protected function makeRegex(array $regexp) : string
     {
         return '/' . implode('', $regexp) . '/';
-    }
-
-    /**
-     * @param $response
-     * @param $content
-     */
-    protected function setContents($response, $content): void
-    {
-        $original = $response->original;
-
-        $response->setContent($content);
-
-        $response->original = $original;
     }
 }
