@@ -36,7 +36,8 @@ This package adds the routes under `genealabs/laravel-caffeine`.
   - 5.3
   - 5.4
   - 5.5 (LTS)
-- PHP 7.0.0 or higher.
+  - 5.6
+- PHP 7.1.3 or higher.
 
 ## Installation
 For Laravel 5.2, follow the directions here: https://github.com/GeneaLabs/laravel-caffeine/tree/166e2ca08af7cc62a59360f33e03d1cb8478df6a
@@ -50,7 +51,7 @@ For Laravel 5.2, follow the directions here: https://github.com/GeneaLabs/larave
    Add the service provider entry in `config/app.php`:
    ```php
    // 'providers' => [
-       GeneaLabs\LaravelCaffeine\Providers\LaravelCaffeineService::class,
+       GeneaLabs\LaravelCaffeine\Providers\Service::class,
    // ],
    ```
 
@@ -178,9 +179,9 @@ selectively enable Caffeine on a given route or route group using route
 middleware:
 
 ```php
-Route::any('test', 'TestController@test')->middleware('caffeinate');
+Route::any('test', 'TestController@test')->middleware('caffeinated');
 
-Route::group(['middleware' => ['caffeinate']], function () {
+Route::group(['middleware' => ['caffeinated']], function () {
     Route::any('test', 'TestController@test');
 })
 ```

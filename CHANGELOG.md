@@ -1,4 +1,37 @@
 # Change Log
+## [0.6.11] - 13 May 2018
+### Fixed
+- regexp to be simpler. Thanks @juandi, #92.
+- `app_env` (to `internaltesting`) to avoid testing conflicts. Thanks @agjino, #82.
+
+## [0.6.10] - 13 May 2018
+### Fixed
+- erroneous `const` in JavaScript, changed to `var`. Thanks @netpok, #86.
+
+## [0.6.9] - 13 May 2018
+### Fixed
+- erroneous `let` in JavaScript, changed to `var`. Thanks @spaceemotion, #94.
+
+## [0.6.8] - 15 Feb 2018
+### Fixed
+- dependency versions to allow installation on earlier versions of Laravel.
+
+## [0.6.7] - 9 Feb 2018
+### Added
+- Laravel 5.6 compatibility.
+
+## [0.6.6] - 9 Jan 2018
+### Changed
+- testing to use orchestral/testbench suite.
+
+## [0.6.5] - 5 Jan 2018
+### Added
+- Laravel 5.6 compatibility.
+
+## [0.6.6] - 9 Feb 2018
+### Changed
+- tests to use `orchestral/testbench` suite.
+
 ## [0.6.5] - 5 Jan 2018
 ### Added
 - `thanks` package.

@@ -29,11 +29,10 @@ class LaravelCaffeineDripMiddleware
         }
 
         $formTokenRegexp = $this->makeRegex([
-            '<input([^>]*?[\n]?)*[^>]*?name\s*=\s*[\'"]_token[\'"]',
+            "<input.*?name\s*=\s*[\'\"]_token[\'\"]",
         ]);
         $metaTokenRegexp = $this->makeRegex([
-            '<meta\s+',
-            'name\s*=\s*[\'"]csrf[_-]token[\'"]',
+            "<meta.*?name\s*=\s*[\'\"]csrf[_-]token[\'\"]",
         ]);
         $hasNoFormToken = ! preg_match($formTokenRegexp, $content);
         $hasNoMetaToken = ! preg_match($metaTokenRegexp, $content);

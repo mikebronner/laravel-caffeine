@@ -7,6 +7,6 @@ class Drip extends Controller
 {
     public function drip()
     {
-        return response('', 204);
+        return response(null, 204);
     }
 }

@@ -32,7 +32,7 @@
 </filter>
     <php>
         <env name="APP_KEY" value="base64:Xgs1LQt1GdVHhD6qyYCXnyq61DE3UKqJ5k2SJc+Nw2g="/>
-        <env name="APP_ENV" value="testing"/>
+        <env name="APP_ENV" value="internaltesting"/>
         <env name="APP_URL" value="http://127.0.0.1:8000"/>
         <env name="CACHE_DRIVER" value="array"/>
         <env name="SESSION_DRIVER" value="array"/>
