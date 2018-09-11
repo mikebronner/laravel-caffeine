@@ -16,13 +16,13 @@
     },
     "require-dev": {
         "codedungeon/phpunit-result-printer": "*",
-        "mockery/mockery": "0.9.*",
-        "orchestra/testbench-browser-kit": "^3.6",
-        "orchestra/testbench-dusk": "3.6.x-dev@dev",
-        "orchestra/testbench": "^3.6",
-        "phpmd/phpmd": "^2.6",
+        "mockery/mockery": "*",
+        "orchestra/testbench-browser-kit": "3.7.x-dev",
+        "orchestra/testbench-dusk": "3.7.x-dev@dev",
+        "orchestra/testbench": "3.7.x-dev",
+        "phpmd/phpmd": "*",
         "phpunit/phpunit": "*",
-        "satooshi/php-coveralls" : "*",
+        "php-coveralls/php-coveralls" : "*",
         "sebastian/phpcpd": "*"
     },
     "autoload": {
