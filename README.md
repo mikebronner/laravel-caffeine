@@ -37,6 +37,7 @@ This package adds the routes under `genealabs/laravel-caffeine`.
   - 5.4
   - 5.5 (LTS)
   - 5.6
+  - 5.7
 - PHP 7.1.3 or higher.
 
 ## Installation
