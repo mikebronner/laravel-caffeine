@@ -14,7 +14,7 @@
         ajax.open('GET', '{{ $url }}');
         ajax.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
         ajax.send();
-    }
+    };
 
     setInterval(function () {
         caffeineSendDrip();
