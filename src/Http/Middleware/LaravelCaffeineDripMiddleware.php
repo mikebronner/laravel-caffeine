@@ -47,6 +47,13 @@ class LaravelCaffeineDripMiddleware
             "{$dripper->html}</body>",
             $content
         );
+
+        $content = preg_replace(
+            '/(<\/body\>?|<\/html\>?|\Z)/',
+            $dripper->html . '$1',
+            $content,
+            1
+        );
         $original = $response->original;
         $response->setContent($content);
         $response->original = $original;
