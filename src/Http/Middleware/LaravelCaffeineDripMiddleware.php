@@ -42,12 +42,6 @@ class LaravelCaffeineDripMiddleware
         }
 
         $dripper = (new Dripper);
-        $content = str_replace(
-            '</body>',
-            "{$dripper->html}</body>",
-            $content
-        );
-
         $content = preg_replace(
             '/(<\/body\>?|<\/html\>?|\Z)/',
             $dripper->html . '$1',
