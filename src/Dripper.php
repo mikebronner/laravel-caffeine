@@ -13,6 +13,7 @@ class Dripper extends Model
                 'interval' => $this->interval,
                 'url' => $this->url,
             ]);
+
         return $html;
     }
 
