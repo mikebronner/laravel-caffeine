@@ -1,4 +1,9 @@
 # Change Log
+
+## [0.8.2] - 2019-06-30
+### Changed
+- method of checking registered middleware groups to use `hasMiddlewareGroup()`.
+
 ## [0.6.12] - 5 Aug 2018
 ### Fixed
 - middleware response to be a view instead of string. Thanks @dallincoons, #96 #95.
