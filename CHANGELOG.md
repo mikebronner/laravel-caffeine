@@ -1,5 +1,9 @@
 # Change Log
 
+## [0.8.3] - 2019-06-30
+### Added
+- support for Spatie's `laravel-csp` package.
+
 ## [0.8.2] - 2019-06-30
 ### Changed
 - method of checking registered middleware groups to use `hasMiddlewareGroup()`.

@@ -1,4 +1,8 @@
+@if (function_exists('csp_nonce'))
+<script nonce="{{ csp_nonce() }}">
+@else
 <script>
+@endif
     var lastCheck = new Date();
     var caffeineSendDrip = function () {
         var ajax = window.XMLHttpRequest
