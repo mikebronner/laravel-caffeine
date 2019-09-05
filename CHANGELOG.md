@@ -1,4 +1,11 @@
 # Change Log
+## [1.0] - 2019-09-05
+### Added
+- Laravel 6.0 compatibility.
+
+### Removed
+- compatibility with older versions of Laravel.
+
 ## [0.6.12] - 5 Aug 2018
 ### Fixed
 - middleware response to be a view instead of string. Thanks @dallincoons, #96 #95.

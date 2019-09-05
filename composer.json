@@ -9,18 +9,18 @@
         }
     ],
     "require": {
-        "illuminate/routing": "5.3 - 6.0",
-        "illuminate/support": "5.3 - 6.0",
-        "jenssegers/model": "~1.2"
+        "illuminate/routing": "6.0",
+        "illuminate/support": "6.0",
+        "jenssegers/model": "^1.2.1"
     },
     "require-dev": {
         "codedungeon/phpunit-result-printer": "*",
-        "mockery/mockery": "*",
-        "orchestra/testbench-browser-kit": "3.9.x-dev@dev",
-        "orchestra/testbench-dusk": "3.9.x-dev@dev",
-        "orchestra/testbench": "3.9.x-dev@dev",
+        "mockery/mockery": "^1.0",
+        "orchestra/testbench-browser-kit": "^3.9",
+        "orchestra/testbench-dusk": "^3.9",
+        "orchestra/testbench": "^3.9",
         "phpmd/phpmd": "*",
-        "phpunit/phpunit": "*",
+        "phpunit/phpunit": "^8.0",
         "php-coveralls/php-coveralls" : "*",
         "sebastian/phpcpd": "*"
     },
