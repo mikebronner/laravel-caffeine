@@ -6,14 +6,13 @@ class Dripper extends Model
 {
     public function getHtmlAttribute() : string
     {
-        $html = (string) view('genealabs-laravel-caffeine::script')
+        return (string) view('genealabs-laravel-caffeine::script')
             ->with([
                 'ageCheckInterval' => $this->ageCheckInterval,
                 'ageThreshold' => $this->ageThreshold,
                 'interval' => $this->interval,
                 'url' => $this->url,
             ]);
-        return $html;
     }
 
     public function getAgeCheckIntervalAttribute() : int

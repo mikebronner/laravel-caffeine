@@ -10,7 +10,7 @@ class Service extends ServiceProvider
 {
     public function boot()
     {
-        app('router')->group($this->middlewareGroupExists('web')
+        app('router')->group(app("router")->hasMiddlewareGroup('web')
             ? ['middleware' => 'web']
             : [], function () {
                 require __DIR__ . '/../../routes/web.php';
@@ -53,29 +53,12 @@ class Service extends ServiceProvider
         }
     }
 
-    protected function middlewareGroupExists(string $group) : bool
-    {
-        $routes = collect(app('router')->getRoutes()->getRoutes());
-
-        return $routes->reduce(function ($carry, Route $route) use ($group) {
-            $carry = ($carry ?? false) ?: false;
-            $actions = (array) $route->getAction();
-
-            if (array_key_exists('middleware', $actions)
-                && in_array($group, (array) $actions['middleware'])
-            ) {
-                return true;
-            }
-
-            return $carry;
-        }) ?? false;
-    }
-
     protected function shouldRegisterGlobalMiddleware() : bool
     {
         return (! request()->ajax()
             && ! $this->shouldRegisterRouteMiddleware()
             && (php_sapi_name() === 'fpm-fcgi'
+                || php_sapi_name() === 'cgi-fcgi'
                 || php_sapi_name() === 'apache2handler'
                 || config("app.env") === 'internaltesting'));
     }
