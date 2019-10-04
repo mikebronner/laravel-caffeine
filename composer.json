@@ -16,9 +16,9 @@
     "require-dev": {
         "codedungeon/phpunit-result-printer": "*",
         "mockery/mockery": "^1.0",
-        "orchestra/testbench-browser-kit": "^3.9",
-        "orchestra/testbench-dusk": "^3.9",
-        "orchestra/testbench": "^3.9",
+        "orchestra/testbench-browser-kit": "^4.0",
+        "orchestra/testbench-dusk": "^4.0",
+        "orchestra/testbench": "^4.0",
         "phpmd/phpmd": "*",
         "phpunit/phpunit": "^8.0",
         "php-coveralls/php-coveralls" : "*",
