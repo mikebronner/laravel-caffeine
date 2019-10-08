@@ -1,4 +1,8 @@
 # Change Log
+## [1.0.3] - 2019-10-08
+### Updated
+- dependency compatibilies.
+
 ## [1.0] - 2019-09-05
 ### Added
 - Laravel 6.0 compatibility.

@@ -9,9 +9,9 @@
         }
     ],
     "require": {
-        "illuminate/routing": "6.0",
-        "illuminate/support": "6.0",
-        "jenssegers/model": "^1.2.1"
+        "illuminate/routing": "^6.0",
+        "illuminate/support": "^6.0",
+        "jenssegers/model": "^1.2"
     },
     "require-dev": {
         "codedungeon/phpunit-result-printer": "*",
