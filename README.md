@@ -1,10 +1,3 @@
----
-title: Caffeine for Laravel
-description: Keeping your Laravel forms awake.
-extends: _layouts.docs
-section: content
-repository_url: https://github.com/GeneaLabs/laravel-caffeine
----
 # Caffeine for Laravel
 [![Travis](https://img.shields.io/travis/GeneaLabs/laravel-caffeine.svg)](https://travis-ci.org/GeneaLabs/laravel-caffeine)
 [![Scrutinizer](https://img.shields.io/scrutinizer/g/GeneaLabs/laravel-caffeine.svg)](https://scrutinizer-ci.com/g/GeneaLabs/laravel-caffeine)
@@ -15,7 +8,7 @@ repository_url: https://github.com/GeneaLabs/laravel-caffeine
 ![Coffee for Laravel](/assets/images/caffeine.jpg)
 
 ## Supporting This Package
-This is an MIT-licensed open source project with its ongoing development made possible by the support of the community. If you'd like to support this, and our other packages, please consider [becoming a sponsor](https://github.com/sponsor/mikebronner).
+This is an MIT-licensed open source project with its ongoing development made possible by the support of the community. If you'd like to support this, and our other packages, please consider [becoming a sponsor](https://github.com/sponsors/mikebronner).
 
 ## Goal
 Prevent forms from timing out when submitting them after leaving them on-screen
