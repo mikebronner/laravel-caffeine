@@ -5,7 +5,7 @@
 [![GitHub (pre-)release](https://img.shields.io/github/release/GeneaLabs/laravel-caffeine/all.svg)](https://github.com/GeneaLabs/laravel-caffeine)
 [![Packagist](https://img.shields.io/packagist/dt/GeneaLabs/laravel-caffeine.svg)](https://packagist.org/packages/genealabs/laravel-caffeine)
 
-![Coffee for Laravel](/assets/images/caffeine.jpg)
+![Caffeine for Laravel masthead image.](https://repository-images.githubusercontent.com/40729869/26446500-f1b2-11e9-9611-6a2e65688de2)
 
 ## Supporting This Package
 This is an MIT-licensed open source project with its ongoing development made possible by the support of the community. If you'd like to support this, and our other packages, please consider [becoming a sponsor](https://github.com/sponsors/mikebronner).
