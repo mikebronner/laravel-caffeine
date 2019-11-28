@@ -29,6 +29,12 @@ I chose this approach to keep the integrity of site-security, by avoiding the
 - removing session-timeout on all pages.
 
 ## Considerations
+### Incompatible Packages
+- [Voyager](https://github.com/the-control-group/voyager) has been reported as
+    being incompatible. To work around this, configure Caffeine to use
+    route-based middleware on all non-Voyager routes. See details below for
+    configuration and implementation of route-based middleware.
+
 ### Routes
 This package adds the routes under `genealabs/laravel-caffeine`.
 

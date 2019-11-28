@@ -1,4 +1,13 @@
 # Change Log
+
+## [1.0.5] - 2019-11-28
+### Updated
+- readme with Voyager incompatibility warning and suggested work-around.
+
+## [1.0.4] - 2019-10-08
+### Fixed
+- commits not being applied to previous release.
+
 ## [1.0.3] - 2019-10-08
 ### Updated
 - dependency compatibilies.
