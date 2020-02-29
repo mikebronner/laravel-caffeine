@@ -3,6 +3,7 @@
 use Closure;
 use GeneaLabs\LaravelCaffeine\Dripper;
 use Illuminate\Http\Request;
+use Wa72\HtmlPageDom\HtmlPageCrawler;
 
 class LaravelCaffeineDripMiddleware
 {
@@ -42,12 +43,10 @@ class LaravelCaffeineDripMiddleware
         }
 
         $dripper = (new Dripper);
-        $content = preg_replace(
-            '/(<\/body\>?|<\/html\>?|\Z)/',
-            $dripper->html . '$1',
-            $content,
-            1
-        );
+        $html = new HtmlPageCrawler($content);
+        $html->filter("html > body")->append($dripper->html);
+        $content = $html->saveHTML();
+
         $original = $response->original;
         $response->setContent($content);
         $response->original = $original;

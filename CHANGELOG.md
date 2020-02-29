@@ -1,5 +1,12 @@
 # Change Log
 
+## [7.0.0] - 2020-02-29
+### Added
+- Laravel 7 compatibility.
+
+### Fixed
+- asset insertion functionality.
+
 ## [1.0.5] - 2019-11-28
 ### Updated
 - readme with Voyager incompatibility warning and suggested work-around.
