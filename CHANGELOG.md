@@ -1,5 +1,9 @@
 # Change Log
 
+## [7.0.1] - 2020-03-06
+### Updated
+- dependencies for Laravel 7 compatibility, removed temp dependencies.
+
 ## [7.0.0] - 2020-02-29
 ### Added
 - Laravel 7 compatibility.
