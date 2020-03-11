@@ -11,8 +11,7 @@
     "require": {
         "illuminate/routing": "^7.0",
         "illuminate/support": "^7.0",
-        "jenssegers/model": "^1.3",
-        "wa72/htmlpagedom": "^2.0"
+        "jenssegers/model": "^1.3"
     },
     "require-dev": {
         "orchestra/testbench-browser-kit": "^5.0",

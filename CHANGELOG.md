@@ -1,5 +1,9 @@
 # Change Log
 
+## [7.0.2] - 2020-03-11
+### Fixed
+- problems with DOM parsing and reverted back to RegExp.
+
 ## [7.0.1] - 2020-03-06
 ### Updated
 - dependencies for Laravel 7 compatibility, removed temp dependencies.
