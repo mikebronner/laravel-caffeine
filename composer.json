@@ -18,7 +18,7 @@
         "orchestra/testbench-dusk": "^5.0",
         "orchestra/testbench": "^5.0",
         "phpmd/phpmd": "^2.7",
-        "phpunit/phpunit": "^8.0",
+        "phpunit/phpunit": "^9.1",
         "php-coveralls/php-coveralls" : "^2.2",
         "sebastian/phpcpd": "^5.0"
     },
