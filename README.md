@@ -39,33 +39,17 @@ I chose this approach to keep the integrity of site-security, by avoiding the
 This package adds the routes under `genealabs/laravel-caffeine`.
 
 ### Dependencies
-- Your project must be running one of the following Laravel versions:
-  - 5.1 (LTS)
-  - 5.3
-  - 5.4
-  - 5.5 (LTS)
-  - 5.6
-  - 5.7
-- PHP 7.1.3 or higher.
+Your project must fullfill the following:
+- Laravel 7.0 or higher
+- PHP 7.2.5 or higher.
 
 ## Installation
-For Laravel 5.2, follow the directions here: https://github.com/GeneaLabs/laravel-caffeine/tree/166e2ca08af7cc62a59360f33e03d1cb8478df6a
+```sh
+composer require genealabs/laravel-caffeine
+```
 
-1. Install the package:
-   ```sh
-   composer require genealabs/laravel-caffeine
-   ```
-
-2. **This is only required for Laravel 5.4 or below:**
-   Add the service provider entry in `config/app.php`:
-   ```php
-   // 'providers' => [
-       GeneaLabs\LaravelCaffeine\Providers\Service::class,
-   // ],
-   ```
-
-3. If you are running 5.5 or above, remove the providers entry from `config/app.php`.
-4. If you have previously registered the middleware, please remove the following
+## Upgrade Notes
+If you have previously registered the middleware, please remove the following
    middleware from `app/Http/Kernel.php`:
    ```php
    // protected $middleware = [
@@ -73,7 +57,6 @@ For Laravel 5.2, follow the directions here: https://github.com/GeneaLabs/larave
    // ];
    ```
 
-## Upgrade Notes
 ### 0.6.0
 This update changes the config file setting names. Please delete the published
 config file `config/genealabs-laravel-caffeine.php` if it exists, and follow the
