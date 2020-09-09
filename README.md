@@ -1,12 +1,14 @@
-![Coffee for Laravel](https://github.com/GeneaLabs/laravel-caffeine/blob/master/caffeine.jpg)
-
 # Caffeine for Laravel
-[![Join the chat at https://gitter.im/GeneaLabs/laravel-caffeine](https://badges.gitter.im/GeneaLabs/laravel-caffeine.svg)](https://gitter.im/GeneaLabs/laravel-caffeine?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Travis](https://img.shields.io/travis/GeneaLabs/laravel-caffeine.svg)](https://travis-ci.org/GeneaLabs/laravel-caffeine)
 [![Scrutinizer](https://img.shields.io/scrutinizer/g/GeneaLabs/laravel-caffeine.svg)](https://scrutinizer-ci.com/g/GeneaLabs/laravel-caffeine)
 [![Coveralls](https://img.shields.io/coveralls/GeneaLabs/laravel-caffeine.svg)](https://coveralls.io/github/GeneaLabs/laravel-caffeine)
 [![GitHub (pre-)release](https://img.shields.io/github/release/GeneaLabs/laravel-caffeine/all.svg)](https://github.com/GeneaLabs/laravel-caffeine)
 [![Packagist](https://img.shields.io/packagist/dt/GeneaLabs/laravel-caffeine.svg)](https://packagist.org/packages/genealabs/laravel-caffeine)
+
+![Caffeine for Laravel masthead image.](https://repository-images.githubusercontent.com/40729869/26446500-f1b2-11e9-9611-6a2e65688de2)
+
+## Supporting This Package
+This is an MIT-licensed open source project with its ongoing development made possible by the support of the community. If you'd like to support this, and our other packages, please consider [becoming a sponsor](https://github.com/sponsors/mikebronner).
 
 ## Goal
 Prevent forms from timing out when submitting them after leaving them on-screen
@@ -27,36 +29,27 @@ I chose this approach to keep the integrity of site-security, by avoiding the
 - removing session-timeout on all pages.
 
 ## Considerations
+### Incompatible Packages
+- [Voyager](https://github.com/the-control-group/voyager) has been reported as
+    being incompatible. To work around this, configure Caffeine to use
+    route-based middleware on all non-Voyager routes. See details below for
+    configuration and implementation of route-based middleware.
+
 ### Routes
 This package adds the routes under `genealabs/laravel-caffeine`.
 
 ### Dependencies
-- Your project must be running one of the following Laravel versions:
-  - 5.1 (LTS)
-  - 5.3
-  - 5.4
-  - 5.5 (LTS)
-  - 5.6
-- PHP 7.1.3 or higher.
+Your project must fullfill the following:
+- Laravel 7.0 or higher
+- PHP 7.2.5 or higher.
 
 ## Installation
-For Laravel 5.2, follow the directions here: https://github.com/GeneaLabs/laravel-caffeine/tree/166e2ca08af7cc62a59360f33e03d1cb8478df6a
+```sh
+composer require genealabs/laravel-caffeine
+```
 
-1. Install the package:
-   ```sh
-   composer require genealabs/laravel-caffeine
-   ```
-
-2. **This is only required for Laravel 5.4 or below:**
-   Add the service provider entry in `config/app.php`:
-   ```php
-   // 'providers' => [
-       GeneaLabs\LaravelCaffeine\Providers\Service::class,
-   // ],
-   ```
-
-3. If you are running 5.5 or above, remove the providers entry from `config/app.php`.
-4. If you have previously registered the middleware, please remove the following
+## Upgrade Notes
+If you have previously registered the middleware, please remove the following
    middleware from `app/Http/Kernel.php`:
    ```php
    // protected $middleware = [
@@ -64,7 +57,6 @@ For Laravel 5.2, follow the directions here: https://github.com/GeneaLabs/larave
    // ];
    ```
 
-## Upgrade Notes
 ### 0.6.0
 This update changes the config file setting names. Please delete the published
 config file `config/genealabs-laravel-caffeine.php` if it exists, and follow the
@@ -122,7 +114,7 @@ return [
     | Checking for Lapsed Drips
     |--------------------------------------------------------------------------
     |
-    | If the browser is put to sleep on (for example on mobil devices or
+    | If the browser is put to sleep on (for example on mobile devices or
     | laptops), it will still cause an error when trying to submit the
     | form. To avoid this, we force-reload the form 2 minutes prior
     | to session time-out or later. Setting this setting to 0
@@ -205,7 +197,7 @@ be. My checklist for package development includes:
 -   ✅ Be fully PSR1, PSR2, and PSR4 compliant.
 -   ✅ Include comprehensive documentation in README.md.
 -   ✅ Provide an up-to-date CHANGELOG.md which adheres to the format outlined
-    at <http://keepachangelog.com>.
+    at <https://keepachangelog.com>.
 -   ✅ Have no PHPMD or PHPCS warnings throughout all code.
 
 ## Contributing

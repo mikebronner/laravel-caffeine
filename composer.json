@@ -9,7 +9,6 @@
         }
     ],
     "require": {
-        "cweagans/composer-patches": "^1.6",
         "illuminate/routing": "^8.0",
         "illuminate/support": "^8.0",
         "jenssegers/model": "^1.3"
