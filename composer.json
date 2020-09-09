@@ -9,21 +9,19 @@
         }
     ],
     "require": {
-        "illuminate/routing": "5.3 - 5.6",
-        "illuminate/support": "5.3 - 5.6",
-        "jenssegers/model": "*",
-        "php": ">=7.1.3"
+        "cweagans/composer-patches": "^1.6",
+        "illuminate/routing": "^8.0",
+        "illuminate/support": "^8.0",
+        "jenssegers/model": "^1.3"
     },
     "require-dev": {
-        "codedungeon/phpunit-result-printer": "*",
-        "mockery/mockery": "0.9.*",
-        "orchestra/testbench-browser-kit": "^3.6",
-        "orchestra/testbench-dusk": "3.6.x-dev@dev",
-        "orchestra/testbench": "^3.6",
-        "phpmd/phpmd": "^2.6",
-        "phpunit/phpunit": "*",
-        "satooshi/php-coveralls" : "*",
-        "sebastian/phpcpd": "*"
+        "orchestra/testbench-browser-kit": "^6.0",
+        "orchestra/testbench-dusk": "^6.0",
+        "orchestra/testbench": "^6.0",
+        "phpmd/phpmd": "^2.7",
+        "phpunit/phpunit": "^8.5",
+        "php-coveralls/php-coveralls" : "^2.2",
+        "sebastian/phpcpd": "^5.0"
     },
     "autoload": {
         "psr-4": {
@@ -35,11 +33,16 @@
             "GeneaLabs\\LaravelCaffeine\\Tests\\": "tests/"
         }
     },
+    "config": {
+        "preferred-install": "source"
+    },
     "extra": {
         "laravel": {
             "providers": [
                 "GeneaLabs\\LaravelCaffeine\\Providers\\Service"
             ]
         }
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
