@@ -15,9 +15,9 @@ class PublishTest extends UnitTestCase
     {
         $settings = file_get_contents(base_path('config/genealabs-laravel-caffeine.php'));
 
-        $this->assertStringContainsStringIgnoringCase("'drip-interval' => 300000,", $settings);
-        $this->assertStringContainsStringIgnoringCase("'domain' => null,", $settings);
-        $this->assertStringContainsStringIgnoringCase("'route' => 'genealabs/laravel-caffeine/drip',", $settings);
-        $this->assertStringContainsStringIgnoringCase("'outdated-drip-check-interval' => 2000,", $settings);
+        $this->assertStringContainsString("'drip-interval' => 300000,", $settings);
+        $this->assertStringContainsString("'domain' => null,", $settings);
+        $this->assertStringContainsString("'route' => 'genealabs/laravel-caffeine/drip',", $settings);
+        $this->assertStringContainsString("'outdated-drip-check-interval' => 2000,", $settings);
     }
 }
