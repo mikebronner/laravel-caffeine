@@ -6,8 +6,8 @@ addons:
     chrome: stable
 
 php:
-    - 7.1.3
     - 7.2
+    - 7.3
 
 before_script:
     - travis_retry composer self-update

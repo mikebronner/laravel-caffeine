@@ -1,4 +1,47 @@
 # Change Log
+
+## [7.0.2] - 2020-03-11
+### Fixed
+- problems with DOM parsing and reverted back to RegExp.
+
+## [7.0.1] - 2020-03-06
+### Updated
+- dependencies for Laravel 7 compatibility, removed temp dependencies.
+
+## [7.0.0] - 2020-02-29
+### Added
+- Laravel 7 compatibility.
+
+### Fixed
+- asset insertion functionality.
+
+## [1.0.5] - 2019-11-28
+### Updated
+- readme with Voyager incompatibility warning and suggested work-around.
+
+## [1.0.4] - 2019-10-08
+### Fixed
+- commits not being applied to previous release.
+
+## [1.0.3] - 2019-10-08
+### Updated
+- dependency compatibilies.
+
+## [1.0] - 2019-09-05
+### Added
+- Laravel 6.0 compatibility.
+
+### Removed
+- compatibility with older versions of Laravel.
+
+## [0.8.3] - 2019-06-30
+### Added
+- support for Spatie's `laravel-csp` package.
+
+## [0.8.2] - 2019-06-30
+### Changed
+- method of checking registered middleware groups to use `hasMiddlewareGroup()`.
+
 ## [0.6.12] - 5 Aug 2018
 ### Fixed
 - middleware response to be a view instead of string. Thanks @dallincoons, #96 #95.
