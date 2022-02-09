@@ -10,6 +10,10 @@
 ## Supporting This Package
 This is an MIT-licensed open source project with its ongoing development made possible by the support of the community. If you'd like to support this, and our other packages, please consider [becoming a sponsor](https://github.com/sponsors/mikebronner).
 
+We thank the following sponsors for their generosity. Please take a moment to check them out:
+
+- [LIX](https://lix-it.com)
+
 ## Goal
 Prevent forms from timing out when submitting them after leaving them on-screen
  for a considerable amount of time. (Laravel defaults to 120 minutes, but that
