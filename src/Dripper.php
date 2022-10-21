@@ -38,7 +38,7 @@ class Dripper extends Model
 
     public function getUrlAttribute() : string
     {
-        return trim(config('genealabs-laravel-caffeine.domain', url('/')), '/')
+        return trim(config('genealabs-laravel-caffeine.domain') ?? url('/'), '/')
             . '/'
             . trim(config(
                 'genealabs-laravel-caffeine.route',
