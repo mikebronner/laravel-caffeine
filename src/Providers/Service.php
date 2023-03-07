@@ -60,6 +60,7 @@ class Service extends ServiceProvider
             && (php_sapi_name() === 'fpm-fcgi'
                 || php_sapi_name() === 'cgi-fcgi'
                 || php_sapi_name() === 'apache2handler'
+                || php_sapi_name() === 'litespeed'
                 || php_sapi_name() === 'cli-server'
                 || config("app.env") === 'internaltesting'));
     }
