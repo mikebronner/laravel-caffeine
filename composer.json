@@ -8,18 +8,34 @@
             "email": "hello@genealabs.com"
         }
     ],
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "jenssegers/model",
+                "version": "dev-master",
+                "source": {
+                    "url": "https://github.com/Kyzegs/model.git",
+                    "type": "git",
+                    "reference": "master"
+                },
+                "autoload": {
+                    "classmap": [""]
+                }
+            }
+        }
+    ],
     "require": {
         "illuminate/routing": "^10.0",
         "illuminate/support": "^10.0",
-        "jenssegers/model": "^1.5"
+        "jenssegers/model": "dev-master@dev"
     },
     "require-dev": {
-        "orchestra/testbench-browser-kit": "^7.0",
-        "orchestra/testbench-dusk": "^7.0",
-        "orchestra/testbench": "^7.0",
-        "phpmd/phpmd": "^2.7",
-        "phpunit/phpunit": "^9.5",
-        "php-coveralls/php-coveralls" : "^2.2"
+        "orchestra/testbench-browser-kit": "^8.0",
+        "orchestra/testbench-dusk": "^8.0",
+        "orchestra/testbench": "^8.0",
+        "phpmd/phpmd": "^2.13",
+        "phpunit/phpunit": "^10.0"
     },
     "autoload": {
         "psr-4": {
@@ -32,7 +48,9 @@
         }
     },
     "config": {
-        "preferred-install": "source"
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
     },
     "extra": {
         "laravel": {
