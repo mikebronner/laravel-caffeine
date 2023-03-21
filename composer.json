@@ -8,27 +8,10 @@
             "email": "hello@genealabs.com"
         }
     ],
-    "repositories": [
-        {
-            "type": "package",
-            "package": {
-                "name": "jenssegers/model",
-                "version": "dev-master",
-                "source": {
-                    "url": "https://github.com/Kyzegs/model.git",
-                    "type": "git",
-                    "reference": "master"
-                },
-                "autoload": {
-                    "classmap": [""]
-                }
-            }
-        }
-    ],
     "require": {
         "illuminate/routing": "^10.0",
         "illuminate/support": "^10.0",
-        "jenssegers/model": "dev-master@dev"
+        "jenssegers/model": "^1.5"
     },
     "require-dev": {
         "orchestra/testbench-browser-kit": "^8.0",
