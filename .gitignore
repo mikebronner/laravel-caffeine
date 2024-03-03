@@ -1,5 +1,5 @@
 .phpunit.result.cache
-/.phpunit.cache
+.phpunit.cache
 /tests/Browser/console
 /tests/Browser/screenshots
 /vendor
