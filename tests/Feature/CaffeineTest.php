@@ -16,7 +16,7 @@ class CaffeineTest extends FeatureTestCase
 
     public function testMiddlewareInjectsDripScript()
     {
-        $expectedResult = file_get_contents(__DIR__ . '/../Fixtures/expired_script.txt');
+        $expectedResult = file_get_contents(__DIR__ . '/../Fixtures/partial_script.txt');
 
         $response = $this->get(route('genealabs-laravel-caffeine.tests.form'));
 

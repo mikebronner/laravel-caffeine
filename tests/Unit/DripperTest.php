@@ -27,7 +27,7 @@ class DripperTest extends UnitTestCase
 
     public function testUrlAttributeValue()
     {
-        $expectedResult = "/genealabs/laravel-caffeine/drip";
+        $expectedResult = "http://127.0.0.1/genealabs/laravel-caffeine/drip";
 
         $actualResult = (new Dripper)->url;
 
@@ -49,6 +49,6 @@ class DripperTest extends UnitTestCase
 
         $actualResult = (new Dripper)->html;
 
-        $this->assertEquals($actualResult, $expectedResult);
+        $this->assertEquals($expectedResult, $actualResult);
     }
 }

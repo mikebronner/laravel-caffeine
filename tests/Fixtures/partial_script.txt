@@ -19,21 +19,3 @@
     setInterval(function () {
         caffeineSendDrip();
     }, 50000);
-
-    if (2000 > 0) {
-        setInterval(
-            function () {
-                if (new Date() - lastCheck >= 7082000) {
-                    location.reload(true);
-                    setTimeout(
-                        function () {
-                            location.reload(true);
-                        },
-                        Math.max(0, 2000 - 500),
-                    );
-                }
-            },
-            2000,
-        );
-    }
-</script>

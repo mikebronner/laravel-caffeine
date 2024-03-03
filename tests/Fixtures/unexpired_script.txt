@@ -11,7 +11,7 @@
             }
         };
 
-        ajax.open('GET', '/genealabs/laravel-caffeine/drip');
+        ajax.open('GET', 'http://127.0.0.1/genealabs/laravel-caffeine/drip');
         ajax.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
         ajax.send();
     };
@@ -21,10 +21,19 @@
     }, 300000);
 
     if (2000 > 0) {
-        setInterval(function () {
-            if (new Date() - lastCheck >= 7082000) {
-                location.reload(true);
-            }
-        }, 2000);
+        setInterval(
+            function () {
+                if (new Date() - lastCheck >= 7082000) {
+                    location.reload(true);
+                    setTimeout(
+                        function () {
+                            location.reload(true);
+                        },
+                        Math.max(0, 2000 - 500),
+                    );
+                }
+            },
+            2000,
+        );
     }
 </script>
