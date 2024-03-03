@@ -1,9 +1,7 @@
-<?php namespace GeneaLabs\LaravelCaffeine\Tests\Unit\Providers;
+<?php namespace GeneaLabs\LaravelCaffeine\Tests\Unit;
 
-use Exception;
 use GeneaLabs\LaravelCaffeine\Dripper;
 use GeneaLabs\LaravelCaffeine\Tests\UnitTestCase;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class DripperTest extends UnitTestCase
 {
