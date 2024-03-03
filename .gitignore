@@ -1,5 +1,6 @@
+.phpunit.result.cache
+/.phpunit.cache
 /tests/Browser/console
 /tests/Browser/screenshots
 /vendor
 composer.lock
-.phpunit.result.cache
