@@ -3,7 +3,19 @@
 @else
 <script>
 @endif
+    window.timers = window.timers || [];
+
+    function startInterval(key, callback, delay) {
+        // If an interval with the same key already exists, clear it
+        if (window.timers[key]) {
+            clearInterval(window.timers[key]);
+        }
+        // Start a new interval and store its ID in the timers object
+        window.timers[key] = setInterval(callback, delay);
+    }
+
     var lastCheck = new Date();
+
     var caffeineSendDrip = function () {
         var ajax = window.XMLHttpRequest
             ? new XMLHttpRequest
@@ -20,24 +32,17 @@
         ajax.send();
     };
 
-    setInterval(function () {
-        caffeineSendDrip();
-    }, {{ $interval }});
+    var caffeineReload = function () {
+        if (new Date() - lastCheck >= {{ $ageCheckInterval + $ageThreshold }}) {
+            setTimeout(function () {
+                location.reload(true);
+            },  Math.max(0, {{ $ageCheckInterval }} - 500) )
+        }
+    };
+
+    startInterval('dripTimer', caffeineSendDrip, {{ $interval }});
 
     if ({{ $ageCheckInterval }} > 0) {
-        setInterval(
-            function () {
-                if (new Date() - lastCheck >= {{ $ageCheckInterval + $ageThreshold }}) {
-                    location.reload(true);
-                    setTimeout(
-                        function () {
-                            location.reload(true);
-                        },
-                        Math.max(0, {{ $ageCheckInterval }} - 500),
-                    );
-                }
-            },
-            {{ $ageCheckInterval }},
-        );
+        startInterval('ageTimer', caffeineReload, {{ $ageCheckInterval }});
     }
 </script>
