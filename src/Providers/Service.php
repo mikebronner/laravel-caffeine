@@ -10,15 +10,11 @@ class Service extends ServiceProvider
 {
     public function boot()
     {
-        app('router')->group(app("router")->hasMiddlewareGroup('web')
-            ? ['middleware' => 'web']
-            : [], function () {
-                require __DIR__ . '/../../routes/web.php';
+        $this->loadRoutesFrom(__DIR__.'/../../routes/web.php');
 
-                if (config("app.env") === 'internaltesting') {
-                    require __DIR__ . '/../../tests/routes/web.php';
-                }
-            });
+        if (config("app.env") === 'internaltesting') {
+            $this->loadRoutesFrom(__DIR__.'/../../tests/routes/web.php');
+        }
 
         $configPath = __DIR__ . '/../../config/genealabs-laravel-caffeine.php';
         $this->mergeConfigFrom($configPath, 'genealabs-laravel-caffeine');
