@@ -8,10 +8,16 @@
             "email": "hello@genealabs.com"
         }
     ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/hebbet/laravel-caffeine.git"
+        }
+    ]
     "require": {
         "illuminate/routing": "^10.0|^11.0|^12.0",
         "illuminate/support": "^10.0|^11.0|^12.0",
-        "jenssegers/model": "^1.5"
+        "jenssegers/model": "dev-patch-1@dev"
     },
     "require-dev": {
         "orchestra/testbench-browser-kit": "^8.0|^9.1",
