@@ -11,20 +11,20 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/hebbet/laravel-caffeine.git"
+            "url": "https://github.com/hebbet/model.git"
         }
-    ]
+    ],
     "require": {
         "illuminate/routing": "^10.0|^11.0|^12.0",
         "illuminate/support": "^10.0|^11.0|^12.0",
         "jenssegers/model": "dev-patch-1@dev"
     },
     "require-dev": {
-        "orchestra/testbench-browser-kit": "^8.0|^9.1",
-        "orchestra/testbench-dusk": "^8.0|^9.12",
-        "orchestra/testbench": "^8.0|^9.0|^10.0",
+        "orchestra/testbench-browser-kit": "^10.0",
+        "orchestra/testbench-dusk": "^10.0",
+        "orchestra/testbench": "^10.0",
         "phpmd/phpmd": "^2.13",
-        "phpunit/phpunit": "^10.0|^11.5.3"
+        "phpunit/phpunit": "^11.5.3"
     },
     "autoload": {
         "psr-4": {
