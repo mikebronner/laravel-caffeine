@@ -118,11 +118,11 @@ return [
     | Checking for Lapsed Drips
     |--------------------------------------------------------------------------
     |
-    | If the browser is put to sleep on (for example on mobile devices or
-    | laptops), it will still cause an error when trying to submit the
-    | form. To avoid this, we force-reload the form 2 minutes prior
-    | to session time-out or later. Setting this setting to 0
-    | will disable this check if you don't want to use it.
+    | If the browser tab is suspended due to inactivity or the device is put to 
+    | sleep, it will still cause an error when trying to submit the form. To
+    | avoid this, we force-reload the form 2 minutes prior to session 
+    | time-out or later. Setting this setting to 0 will disable this 
+    | check if you don't want to use it.
     |
     | Default: 2000 (int)
     |
