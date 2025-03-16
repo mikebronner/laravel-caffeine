@@ -1,5 +1,17 @@
 <script>
+    window.timers = window.timers || [];
+
+    function startInterval(key, callback, delay) {
+        // If an interval with the same key already exists, clear it
+        if (window.timers[key]) {
+            clearInterval(window.timers[key]);
+        }
+        // Start a new interval and store its ID in the timers object
+        window.timers[key] = setInterval(callback, delay);
+    }
+
     var lastCheck = new Date();
+
     var caffeineSendDrip = function () {
         var ajax = window.XMLHttpRequest
             ? new XMLHttpRequest
@@ -16,6 +28,17 @@
         ajax.send();
     };
 
-    setInterval(function () {
-        caffeineSendDrip();
-    }, 50000);
+    var caffeineReload = function () {
+        if (new Date() - lastCheck >= -58000) {
+            setTimeout(function () {
+                location.reload(true);
+            },  Math.max(0, 2000 - 500) )
+        }
+    };
+
+    startInterval('dripTimer', caffeineSendDrip, 50000);
+
+    if (2000 > 0) {
+        startInterval('ageTimer', caffeineReload, 2000);
+    }
+</script>

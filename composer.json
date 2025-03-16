@@ -8,16 +8,9 @@
             "email": "hello@genealabs.com"
         }
     ],
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/hebbet/model.git"
-        }
-    ],
     "require": {
         "illuminate/routing": "^10.0|^11.0|^12.0",
-        "illuminate/support": "^10.0|^11.0|^12.0",
-        "jenssegers/model": "dev-patch-1@dev"
+        "illuminate/support": "^10.0|^11.0|^12.0"
     },
     "require-dev": {
         "orchestra/testbench-browser-kit": "^10.0",

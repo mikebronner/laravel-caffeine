@@ -27,8 +27,7 @@ class CaffeineTest extends FeatureTestCase
     public function testSuccessfulDrip()
     {
         $dripRoute = config('genealabs-laravel-caffeine.route', 'genealabs/laravel-caffeine/drip');
-        $html = $this
-            ->get(route('genealabs-laravel-caffeine.tests.form'))
+        $html = $this->get(route('genealabs-laravel-caffeine.tests.form'))
             ->response
             ->getContent();
         $matches = [];

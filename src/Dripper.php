@@ -1,48 +1,44 @@
-<?php namespace GeneaLabs\LaravelCaffeine;
+<?php
 
-use Jenssegers\Model\Model;
+declare(strict_types=1);
 
-class Dripper extends Model
+namespace GeneaLabs\LaravelCaffeine;
+
+class Dripper
 {
-    public function getHtmlAttribute() : string
+    public function getHtml(): string
     {
-        return (string) view('genealabs-laravel-caffeine::script')
+        return (string) view("genealabs-laravel-caffeine::script")
             ->with([
-                'ageCheckInterval' => $this->ageCheckInterval,
-                'ageThreshold' => $this->ageThreshold,
-                'interval' => $this->interval,
-                'url' => $this->url,
+                "ageCheckInterval" => $this->getAgeCheckInterval(),
+                "ageThreshold" => $this->getAgeThreshold(),
+                "interval" => $this->getInterval(),
+                "url" => $this->getUrl(),
             ]);
     }
 
-    public function getAgeCheckIntervalAttribute() : int
+    protected function getAgeCheckInterval(): int
     {
-        return config(
-            'genealabs-laravel-caffeine.outdated-drip-check-interval',
-            2000
-        );
+        return config("genealabs-laravel-caffeine.outdated-drip-check-interval", 2000);
     }
 
-    public function getAgeThresholdAttribute() : int
+    protected function getAgeThreshold(): int
     {
-        return (config('session.lifetime', 32) - 2) * 60000;
+        return (config("session.lifetime", 32) - 2) * 60000;
     }
 
-    public function getIntervalAttribute() : string
+    protected function getInterval(): int
     {
-        return config(
-            'genealabs-laravel-caffeine.drip-interval',
-            300000
-        );
+        return config("genealabs-laravel-caffeine.drip-interval", 300000);
     }
 
-    public function getUrlAttribute() : string
+    protected function getUrl(): string
     {
-        return trim(config('genealabs-laravel-caffeine.domain') ?? url('/'), '/')
-            . '/'
-            . trim(config(
-                'genealabs-laravel-caffeine.route',
-                'genealabs/laravel-caffeine/drip'
-            ), '/');
+        return trim(config("genealabs-laravel-caffeine.domain") ?? url("/"), "/")
+            . "/"
+            . trim(
+                config("genealabs-laravel-caffeine.route", "genealabs/laravel-caffeine/drip"),
+                "/",
+            );
     }
 }
