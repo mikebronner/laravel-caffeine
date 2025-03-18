@@ -27,7 +27,7 @@
                     location.reload(true);
                     setTimeout(
                         function () {
-                            location.reload(true);
+                            location.reload();
                         },
                         Math.max(0, 2000 - 500),
                     );
