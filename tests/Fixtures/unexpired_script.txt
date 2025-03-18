@@ -31,7 +31,7 @@
     var caffeineReload = function () {
         if (new Date() - lastCheck >= 7082000) {
             setTimeout(function () {
-                location.reload(true);
+                location.reload();
             },  Math.max(0, 2000 - 500) )
         }
     };
