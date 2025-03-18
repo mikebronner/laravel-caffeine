@@ -35,7 +35,7 @@
     var caffeineReload = function () {
         if (new Date() - lastCheck >= {{ $ageCheckInterval + $ageThreshold }}) {
             setTimeout(function () {
-                location.reload(true);
+                location.reload();
             },  Math.max(0, {{ $ageCheckInterval }} - 500) )
         }
     };
