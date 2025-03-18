@@ -50,7 +50,7 @@ return [
     | Checking for Lapsed Drips
     |--------------------------------------------------------------------------
     |
-    | If the browser is put to sleep on (for example on mobil devices or
+    | If the browser is put to sleep on (for example on mobile devices or
     | laptops), it will still cause an error when trying to submit the
     | form. To avoid this, we force-reload the form 2 minutes prior
     | to session time-out or later. Setting this setting to 0
