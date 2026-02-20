@@ -9,15 +9,15 @@
         }
     ],
     "require": {
-        "illuminate/routing": "^10.0|^11.0|^12.0",
-        "illuminate/support": "^10.0|^11.0|^12.0"
+        "illuminate/routing": "^10.0|^11.0|^12.0|^13.0",
+        "illuminate/support": "^10.0|^11.0|^12.0|^13.0"
     },
     "require-dev": {
         "orchestra/testbench-browser-kit": "^10.0",
         "orchestra/testbench-dusk": "^10.0",
-        "orchestra/testbench": "^10.0",
+        "orchestra/testbench": "^10.0|^11.0",
         "phpmd/phpmd": "^2.13",
-        "phpunit/phpunit": "^11.5.3"
+        "phpunit/phpunit": "^11.5.3|^12.5.12"
     },
     "autoload": {
         "psr-4": {
