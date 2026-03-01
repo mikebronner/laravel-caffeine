@@ -42,12 +42,6 @@ following:
 - PHP 8.2+
 - Laravel 11, 12, or 13
 
-| Laravel | PHP  | Package |
-|---------|------|---------|
-| 11.x    | 8.2+ | 12.x   |
-| 12.x    | 8.2+ | 12.x   |
-| 13.x    | 8.4+ | 12.x   |
-
 ## 📦 Installation
 ```sh
 composer require genealabs/laravel-caffeine
