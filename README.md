@@ -45,7 +45,7 @@ This package adds the routes under `genealabs/laravel-caffeine`.
 ### Dependencies
 Your project must fullfill the following:
 - Laravel 8.0 or higher
-- PHP 7.3 or higher.
+- PHP 8.2 or higher (including PHP 8.5).
 
 ## Installation
 ```sh
