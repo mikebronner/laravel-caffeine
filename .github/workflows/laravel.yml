@@ -14,19 +14,31 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        php: [8.3, 8.2]
+        include:
+          - php: '8.3'
+            laravel: '12.*'
+            testbench: '10.*'
+          - php: '8.4'
+            laravel: '12.*'
+            testbench: '10.*'
+          - php: '8.4'
+            laravel: '13.*'
+            testbench: '11.*'
+          - php: '8.5'
+            laravel: '13.*'
+            testbench: '11.*'
 
-    name: PHP ${{ matrix.php }}
+    name: PHP ${{ matrix.php }} / Laravel ${{ matrix.laravel }}
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Cache dependencies
       uses: actions/cache@v4
       with:
         path: ~/.composer/cache/files
-        key: dependencies-php-${{ matrix.php }}-composer-${{ hashFiles('composer.json') }}
+        key: dependencies-php-${{ matrix.php }}-laravel-${{ matrix.laravel }}-composer-${{ hashFiles('composer.json') }}
 
     - name: Setup PHP ${{ matrix.php }}
       uses: shivammathur/setup-php@v2
@@ -37,7 +49,8 @@ jobs:
 
     - name: Install Dependencies
       run: |
-        composer install -q --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
+        composer require "illuminate/support:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" --no-interaction --no-update
+        composer update -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
 
-    - name: Execute Integration and Feature tests via PHPUnit
-      run: vendor/bin/phpunit --configuration phpunit.xml --testsuite Integration,Feature
+    - name: Execute tests via PHPUnit
+      run: vendor/bin/phpunit --configuration phpunit.xml

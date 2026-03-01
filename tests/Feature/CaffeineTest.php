@@ -11,7 +11,7 @@ class CaffeineTest extends FeatureTestCase
 
         $response = $this->get($dripRoute);
 
-        $response->seeStatusCode(204);
+        $response->assertStatus(204);
     }
 
     public function testMiddlewareInjectsDripScript()
@@ -20,7 +20,7 @@ class CaffeineTest extends FeatureTestCase
 
         $response = $this->get(route('genealabs-laravel-caffeine.tests.form'));
 
-        $response->see($expectedResult);
+        $response->assertSee($expectedResult, false);
         $response->assertViewHas('foo');
     }
 
@@ -28,7 +28,6 @@ class CaffeineTest extends FeatureTestCase
     {
         $dripRoute = config('genealabs-laravel-caffeine.route', 'genealabs/laravel-caffeine/drip');
         $html = $this->get(route('genealabs-laravel-caffeine.tests.form'))
-            ->response
             ->getContent();
         $matches = [];
         preg_match('/<meta name="csrf-token" content="(.*?)">/', $html, $matches);
@@ -38,7 +37,7 @@ class CaffeineTest extends FeatureTestCase
             '_token' => $csrfToken,
         ]);
 
-        $response->seeStatusCode(204);
+        $response->assertStatus(204);
     }
 
     public function testExpiredDrip()
@@ -49,7 +48,6 @@ class CaffeineTest extends FeatureTestCase
         );
         $html = $this
             ->get(route('genealabs-laravel-caffeine.tests.form'))
-            ->response
             ->getContent();
         $matches = [];
         preg_match(
@@ -64,14 +62,13 @@ class CaffeineTest extends FeatureTestCase
             '_token' => $csrfToken,
         ]);
 
-        $response->seeStatusCode(404);
+        $response->assertStatus(404);
     }
 
     public function testDisabledCaffeination()
     {
         $html = $this
             ->get(route('genealabs-laravel-caffeine.tests.disabled-page'))
-            ->response
             ->getContent();
 
         $isDisabled = (bool) preg_match(
@@ -91,7 +88,7 @@ class CaffeineTest extends FeatureTestCase
     {
         $response = $this->get(route('genealabs-laravel-caffeine.tests.null-response'));
 
-        $response->dontSee('var caffeineSendDrip');
+        $response->assertDontSee('var caffeineSendDrip', false);
     }
 
     public function testRouteMiddleware()
@@ -104,6 +101,6 @@ class CaffeineTest extends FeatureTestCase
         $response = $this
             ->get(route('genealabs-laravel-caffeine.tests.route-middleware'));
 
-        $response->see('var caffeineSendDrip');
+        $response->assertSee('var caffeineSendDrip', false);
     }
 }
