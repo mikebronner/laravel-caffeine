@@ -42,6 +42,15 @@ I chose this approach to keep the integrity of site-security, by avoiding the
 ### Routes
 This package adds the routes under `genealabs/laravel-caffeine`.
 
+### Supported Versions
+
+| Laravel | PHP | Package |
+|---------|-----|---------|
+| 10.x    | 8.1+ | 12.x  |
+| 11.x    | 8.2+ | 12.x  |
+| 12.x    | 8.2+ | 12.x  |
+| 13.x    | 8.4+ | 12.x  |
+
 ### Dependencies
 Your project must fullfill the following:
 - Laravel 8.0 or higher
