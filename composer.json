@@ -13,7 +13,7 @@
         "illuminate/support": "^11.0|^12.0|^13.0"
     },
     "require-dev": {
-        "orchestra/testbench": "^10.0|^11.0",
+        "orchestra/testbench": "^9.0|^10.0|^11.0",
         "phpmd/phpmd": "^2.13",
         "phpunit/phpunit": "^11.5.3|^12.0"
     },
